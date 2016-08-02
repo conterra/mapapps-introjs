@@ -1,0 +1,223 @@
+{
+  "load": {
+    "bundleLocations": [
+      "localbundles",
+      "bundles"
+    ],
+    "allowedBundles": [
+      "system",
+      "splashscreen",
+      "map",
+      "themes",
+      "templates",
+      "templatelayout",
+      "windowmanager",
+      "toolset",
+      "toolrules",
+      "basemaptoggler",
+      "legend",
+      "banner",
+      "custominfo",
+      "mapflow",
+      "agsprinting",
+      "dn_introjs"
+    ],
+    "skipBundles": [],
+    "require": [
+      "${app}.app"
+    ],
+    "i18n": [
+      "bundle"
+    ]
+  },
+  "bundles": {
+    "basemaptoggler": {
+      "DropDownBasemapToggler": {
+        "showLabel": true
+      }
+    },
+    "banner": {
+      "BannerWidget": {
+        "image": "resource('${app}:/images/logo_conterra.png')",
+        "imageWidth": 120,
+        "link": "http://www.conterra.de"
+      }
+    },
+    "map": {
+      "MapState": {
+        "initialExtent": {
+          "xmin": -1100000,
+          "ymin": 4000000,
+          "xmax": 3500000,
+          "ymax": 8800000,
+          "spatialReference": {
+            "wkid": 3857
+          }
+        }
+      },
+      "MapModelFactory": {
+        "_configData": {
+          "maps": [
+            {
+              "id": "default",
+              "glass_pane": [
+                {
+                  "id": "settlements",
+                  "enabled": true,
+                  "maptip": {
+                    "content": "<p><b>{name2}<br />{name3}</b></p><p>{street}<br />{plz_city}</p>",
+                    "dimensions": {
+                      "width": 180,
+                      "height": 110
+                    }
+                  },
+                  "infoTemplate": {
+                    "title": "${name}",
+                    "content": "<p><b>${name2}<br />${name3}</b></p><p>${street}<br />${plz_city}</p><p>${map.glasspane.settlements.tel} ${tel}<br /><a href='mailto:${email}'>${email}</a></p><p><a href='${link}' target='_blank'>${map.glasspane.settlements.link}</a></p>",
+                    "dimensions": {
+                      "width": 250,
+                      "height": 250
+                    }
+                  },
+                  "graphics": [
+                    {
+                      "geometry": {
+                        "x": 851833,
+                        "y": 6788378,
+                        "spatialReference": {
+                          "wkid": 3857
+                        }
+                      },
+                      "attributes": {
+                        "name": "con terra",
+                        "name2": "con terra GmbH",
+                        "name3": "",
+                        "street": "Martin-Luther-King-Weg 24",
+                        "plz_city": "DE-48155 Muenster",
+                        "tel": "+49 89 207 005 2200",
+                        "email": "info@conterra.de",
+                        "link": "http://www.conterra.de/"
+                      },
+                      "symbol": {
+                        "color": [
+                          221,
+                          0,
+                          85,
+                          230
+                        ],
+                        "size": 12,
+                        "angle": 0,
+                        "xoffset": 0,
+                        "yoffset": 0,
+                        "type": "esriSMS",
+                        "style": "esriSMSSquare",
+                        "outline": {
+                          "color": [
+                            255,
+                            255,
+                            255,
+                            255
+                          ],
+                          "width": 0,
+                          "type": "esriSLS",
+                          "style": "esriSLSSolid"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ],
+              "operationalLayer": [],
+              "baseLayer": [
+                {
+                  "title": "${service.streets}",
+                  "service": "streets",
+                  "enabled": true
+                },
+                {
+                  "title": "${service.topo}",
+                  "service": "worldtopo",
+                  "enabled": false
+                },
+                {
+                  "title": "${service.aerial}",
+                  "service": "worldimage",
+                  "enabled": false
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "MappingResourceRegistryFactory": {
+        "_knownServices": {
+          "services": [
+            {
+              "id": "worldimage",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+              "type": "AGS_TILED",
+              "title": "${map.base.aerial.title}",
+              "description": "${map.base.aerial.description}"
+            },
+            {
+              "id": "worldtopo",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+              "type": "AGS_TILED",
+              "title": "${map.base.topo.title}",
+              "description": "${map.base.topo.description}"
+            },
+            {
+              "id": "streets",
+              "description": "${map.base.streets.description}",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+              "type": "AGS_TILED",
+              "title": "${map.base.streets.title}"
+            }
+          ]
+        }
+      }
+    },
+    "toolset": {
+      "ToolsetManager": {
+        "toolsets": [
+          {
+            "id": "tools",
+            "cssClass": "notitle",
+            "windowType": "css_positioned",
+            "title": "${toolsets.whatdoyouwant}",
+            "tools": [
+              "agsprinttool",
+              "measurementtool",
+              "storeListDialogToggleTool",
+              "navigation_tools",
+              "coordinateFinderTool",
+              "bookmarkstool"
+            ],
+            "container": "map",
+            "position": {
+              "rel_t": 72,
+              "rel_l": 20
+            }
+          },
+          {
+            "id": "mapview_tools",
+            "title": "${toolsets.mapviewTools}",
+            "tooltip": "${toolsets.mapviewToolsTooltip}",
+            "tools": [
+              "zoomInClickTool",
+              "zoomOutClickTool",
+              "locateme",
+              "magnifier",
+              "overviewmap"
+            ],
+            "container": "map",
+            "max_horizontal": 1,
+            "windowType": "css_positioned",
+            "cssClass": "notitle muted mapview_tools",
+            "deactivateToolsOnHide": true
+          }
+        ]
+      }
+    }
+  }
+}

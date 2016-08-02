@@ -1,0 +1,44 @@
+{
+  "Bundle-SymbolicName": "dn_introjs",
+  "Bundle-Version": "1.0.0-SNAPSHOT",
+  "Bundle-Name": "${bundleName}",
+  "Bundle-Description": "${bundleDescription}",
+  "Bundle-Vendor": "con terra GmbH",
+  "Product-Name": "con terra Developer Network",
+  //"Bundle-StartLevel": 10,
+  "Require-Bundle": [
+  ],
+  "CSS-Themes-Extension": [
+    {
+      "name": "*",
+      "files": [
+        "./styles/intro.css"
+      ]
+    }
+  ],
+  "Components": [
+    {
+      "name": "UserTutorial",
+      "propertiesConstructor": true,
+      "immediate": true,
+      "provides": [
+        "ct.framework.api.EventHandler",
+        "dn_introjs.UserTutorial"
+      ],
+      "properties": {
+        "Event-Topics": [
+        ]
+      },
+      "references": [
+        {
+          "name": "_eventService",
+          "providing": "ct.framework.api.EventService"
+        },
+        {
+          "name": "_esriMap",
+          "providing": "esri.Map"
+        }
+      ]
+    }
+  ]
+}
