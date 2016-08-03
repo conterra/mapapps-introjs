@@ -15,15 +15,44 @@
  */
 define({
     root: {
+        apptitle: "map.apps - Introjs Sample",
+        custominfo: {
+            imprint: {
+                title: "Imprint",
+                tooltip: "Show imprint",
+                content: "<p>Add your imprint here.</p>"
+            }
+        },
+        agssearch: {
+            countries: {
+                title: "Countries in Europe (Search on ArcGIS for Server Map Service)",
+                description: "Search for countries in Europe",
+                placeHolder: "Country..."
+            }
+        },
         basemaptoggler: {
             ui: {
                 labelTitle: "Basemap"
             }
         },
-        service: {
-            streets: "Streets",
-            topo: "Topography",
-            aerial: "Aerial"
+        bookmarks: {
+            ui: {
+                toolTitle: "Set spatial bookmarks",
+                clearButton: "Clear all bookmarks",
+                deleteMessage: "Do you really want to clear all bookmarks?",
+                deleteTitle: "Are you sure?",
+                deleteWarning: "This cannot be undone!"
+            },
+            predefined: {
+                europe: "Europe",
+                germany: "Germany"
+            }
+        },
+        contentviewer: {
+            regions: {
+                title: "EU27 Biogeographical Regions 2011",
+                search: "Search for more information!"
+            }
         },
         map: {
             glasspane: {
@@ -33,15 +62,15 @@ define({
                 }
             },
             base: {
-                topo: {
+                "topo": {
                     title: "Topo",
                     description: "A topographic world map"
                 },
-                aerial: {
+                "aerial": {
                     title: "Aerial",
                     description: "Aerial views of the whole world"
                 },
-                streets: {
+                "streets": {
                     title: "Streets",
                     description: "A detailed world street map"
                 }
@@ -80,6 +109,35 @@ define({
                 }
             }
         },
+        resultcenter: {
+            fields: {
+                title: "Title"
+            }
+        },
+        templates: {
+            templates: {
+                seasons: {
+                    mapflow: {
+                        title: "Map Content"
+                    }
+                }
+            }
+        },
+        toolsets: {
+            whatdoyouwant: "What do you want to do?",
+            redliningTools: "Redlining",
+            redliningToolsTooltip: "Redlining-Tools",
+            navigationTools: "Use navigation tools",
+            navigationToolsTooltip: "Tools for map navigation",
+            mapviewTools: "Map Tools",
+            mapviewToolsTooltip: "Map Tools"
+        },
+        fields: {
+            id: "ID",
+            title: "Title",
+            adapter: "Service",
+            type: "Type"
+        }
     },
-    de: true
+    "de": true
 });

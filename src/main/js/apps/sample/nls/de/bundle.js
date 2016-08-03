@@ -14,15 +14,44 @@
  * limitations under the License.
  */
 define({
+    apptitle: "map.apps - Introjs Sample",
+    custominfo: {
+        imprint: {
+            title: "Impressum",
+            tooltip: "Zeige Impressum",
+            content: "<p>F\u00FCgen Sie hier Ihr Impressum ein.</p>"
+        }
+    },
+    agssearch: {
+        countries: {
+            title: "L\u00E4nder in Europa (Suche auf ArcGIS for Server Map Service)",
+            description: "Suche nach L\u00E4ndern in Europa",
+            placeHolder: "Land..."
+        }
+    },
     basemaptoggler: {
         ui: {
             labelTitle: "Hintergrund"
         }
     },
-    service: {
-        streets: "Stra\u00DFen",
-        topo: "Topographie",
-        aerial: "Luftbild"
+    bookmarks: {
+        ui: {
+            toolTitle: "R\u00E4umliche Lesezeichen setzen",
+            clearButton: "Alle Lesezeichen l\u00F6schen",
+            deleteMessage: "Wollen Sie wirklich alle Lesezeichen l\u00F6schen?",
+            deleteTitle: "Sind Sie sicher?",
+            deleteWarning: "Diese Aktion kann nicht r\u00FCckg\u00E4ngig gemacht werden!"
+        },
+        predefined: {
+            europe: "Europa",
+            germany: "Deutschland"
+        }
+    },
+    contentviewer: {
+        regions: {
+            title: "EU27 Biografische Regionen 2011",
+            search: "Suche nach weiteren Informationen!"
+        }
     },
     map: {
         glasspane: {
@@ -56,27 +85,56 @@ define({
             regions: {
                 title: "Biogeographische Regionen",
                 description: "Der Biogeographische Reogionen-Datensatz beinhaltet die offiziellen Abgrenzungen, welche Einsatz in der Flora-Fauna-Habitat-Richtlinie (92/43/EWG) sowie im EMERALD Network, welches im Rahmen der Konvention zur Erhaltung wild lebender Pflanzen und Tiere und ihrer Lebensr\u00E4ume (Berner Abkommen) entstand, finden.",
-                layers: {
-                    0: "EU27 Biogeographische Regionen 2011",
-                    1: "EU27 Biogeographische Regionen 2008",
-                    2: "EU27 Biogeographische Regionen 2005",
-                    3: "EU27 Biogeographische Regionen 2011 Grenzen"
-                }
+                    layers: {
+                        0: "EU27 Biogeographische Regionen 2011",
+                        1: "EU27 Biogeographische Regionen 2008",
+                        2: "EU27 Biogeographische Regionen 2005",
+                        3: "EU27 Biogeographische Regionen 2011 Grenzen"
+                    }
             },
             natura2000: {
                 title: "Natura 2000 Schutzgebiete",
-                description: "Natura 2000 ist das Hauptinstrument der Europ\u00E4ischen Union zum Bewahren der Biodiversit\u00E4t. Es ist ein \u00F6kologisches Netzwerk von gesch\u00FCtzten Regionen und wurde zum Schutz von seltenen Arten und Habitaten ins Leben gerufen. Natura 2000 basiert auf der Vogelschutzrichtlinie von 1979 sowie auf der FFH-Richtlinie von 1992. Es beinhaltet Schutzma\u00DFnahmen f\u00FCr viele \u00D6kosysteme und sichert die Gesundheit und Robustheit von Europas Umwelt und Natur.",
-                layers: {
-                    1: "Fl\u00E4chen nach der FFH-Richtlinie",
-                    2: "Ma\u00DFstab kleiner als 1:10.000.000",
-                    3: "Ma\u00DFstab zwischen 1:100.000 und 1:10.000.000",
-                    4: "Ma\u00DFstab gr\u00F6\u00DFer als 1:100.000",
-                    5: "Vogelschutzgebiete",
-                    6: "Ma\u00DFstab kleiner als 1:10,000,000",
-                    7: "Ma\u00DFstab zwischen 1:100,000 und 1:10,000,000",
-                    8: "Ma\u00DFstab gr\u00F6\u00DFer als 1:100,000"
+                    description: "Natura 2000 ist das Hauptinstrument der Europ\u00E4ischen Union zum Bewahren der Biodiversit\u00E4t. Es ist ein \u00F6kologisches Netzwerk von gesch\u00FCtzten Regionen und wurde zum Schutz von seltenen Arten und Habitaten ins Leben gerufen. Natura 2000 basiert auf der Vogelschutzrichtlinie von 1979 sowie auf der FFH-Richtlinie von 1992. Es beinhaltet Schutzma\u00DFnahmen f\u00FCr viele \u00D6kosysteme und sichert die Gesundheit und Robustheit von Europas Umwelt und Natur.",
+                    layers: {
+                        1: "Fl\u00E4chen nach der FFH-Richtlinie",
+                        2: "Ma\u00DFstab kleiner als 1:10.000.000",
+                        3: "Ma\u00DFstab zwischen 1:100.000 und 1:10.000.000",
+                        4: "Ma\u00DFstab gr\u00F6\u00DFer als 1:100.000",
+                        5: "Vogelschutzgebiete",
+                        6: "Ma\u00DFstab kleiner als 1:10,000,000",
+                        7: "Ma\u00DFstab zwischen 1:100,000 und 1:10,000,000",
+                        8: "Ma\u00DFstab gr\u00F6\u00DFer als 1:100,000"
+                    }
+            }
+        }
+    },
+    resultcenter: {
+        fields: {
+            title: "Titel"
+        }
+    },
+    templates: {
+        templates: {
+            seasons: {
+                mapflow: {
+                    title: "Karteninhalt"
                 }
             }
         }
+    },
+    toolsets: {
+        whatdoyouwant: "Was m\u00f6chten Sie tun?",
+        redliningTools: "Zeichnen",
+        redliningToolsTooltip: "Zeichen- und Editier-Werkzeuge",
+        navigationTools: "Navigationswerkzeuge nutzen",
+        navigationToolsTooltip: "Werkzeuge zur Kartennavigation",
+        mapviewTools: "Kartenwerkzeuge",
+        mapviewToolsTooltip: "Kartenwerkzeuge"
+    },
+    fields: {
+        id: "ID",
+        title: "Titel",
+        adapter: "Dienst",
+        type: "Typ"
     }
 });

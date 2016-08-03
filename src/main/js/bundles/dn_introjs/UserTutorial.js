@@ -24,102 +24,76 @@ define([
 ], function (declare, d_lang, domConstruct, query, win, introjs, ct_async) {
     return declare([], {
         overlayUtils: null,
-        _activated: false,
         overlayCount: 0,
         activate: function () {
-            //ct_async(function () {
-                //this.addGlobalOverlay();
+            ct_async(function () {
                 this.startTutorial();
-                this._activated = true;
-            //}, this, 2000);
-        },
-        isActivated: function () {
-            return this._activated;
+            }, this, 1000);
         },
         startTutorial: function () {
-            var tutorial = this._i18n.get().intro;
+            var i18n = this._i18n.get().intro;
             var intro = introjs();
             intro.setOptions({
                 showStepNumbers: false,
+                showBullets: true,
                 exitOnOverlayClick: false,
-                nextLabel: tutorial.next + " &rarr;",
-                prevLabel: "&larr; " + tutorial.back,
-                skipLabel: tutorial.skip,
-                doneLabel: tutorial.done,
+                nextLabel: i18n.next + " &rarr;",
+                prevLabel: "&larr; " + i18n.back,
+                skipLabel: i18n.skip,
+                doneLabel: i18n.done,
                 steps: [
                     {
-                        intro: tutorial.familiarise
+                        intro: i18n.familiarise
                     },
                     {
-                        intro: tutorial.navigation
+                        intro: i18n.navigation
                     },
                     {
-                        element: document.querySelector('.esriLargeSlider'), // zoom buttons
-                        intro: tutorial.zoom,
+                        element: document.querySelector('.mapview_tools'), // mapview
+                        intro: i18n.mapview,
                         position: 'left'
                     },
                     {
-                        element: document.querySelector('.headerRight'), // basemaptoggler
-                        intro: tutorial.basemap,
-                        position: 'left'
+                        element: document.querySelector('.themeSelector'), // theme selector
+                        intro: i18n.theme,
+                        position: 'bottom'
                     },
                     {
-                        element: document.querySelector('.dockingBarBottomLeft'), // mapflow
-                        intro: tutorial.features,
+                        element: document.querySelector('.basemapToggler'), // basemap toggler
+                        intro: i18n.basemap,
+                        position: 'bottom'
+                    },
+                    {
+                        element: document.querySelector('.languageToggler'), // language toggler
+                        intro: i18n.language,
+                        position: 'bottom'
+                    },
+                    {
+                        element: document.querySelector('.omnisearch'), // omnisearch
+                        intro: i18n.omnisearch,
+                        position: 'bottom'
+                    },
+                    {
+                        element: document.querySelector('.ctWDYWBtn'), // functions
+                        intro: i18n.functions,
+                        position: 'right'
+                    },
+                    {
+                        element: document.querySelector('.ctTool_mapflowToggleTool'), // mapflow
+                        intro: i18n.mapflow,
                         position: 'top'
                     },
                     {
-                        element: document.querySelector('.dockingBarBottomRight'), // legend
-                        intro: tutorial.legend,
+                        element: document.querySelector('.ctTool_legendToggleTool'), // legend
+                        intro: i18n.legend,
                         position: 'top'
                     },
                     {
-                        element: document.querySelector('.ctTool_ec_feature_infoTool'),
-                        intro: tutorial.featureinfo,
-                        position: 'top'
+                        intro: i18n.featureinfo
                     }
                 ]
             });
             intro.start();
-            intro.oncomplete(d_lang.hitch(this, function () {
-                this.removeGlobalOverlay();
-            }));
-            intro.onexit(d_lang.hitch(this, function () {
-                this.removeGlobalOverlay();
-            }));
-        },
-        addGlobalOverlay: function () {
-            this.overlayCount++;
-
-            console.info("overlay added. count: " + this.overlayCount);
-
-            var overlay = query('.ec-overlay');
-            if (overlay && overlay.length > 0) {
-                console.log("got an overlay!");
-                return true;
-            }
-
-            domConstruct.create('div', {
-                class: 'ec-overlay',
-                style: 'top: 0;bottom: 0; left: 0;right: 0;position: fixed;background: grey;opacity: 0.5;'
-            }, win.body());
-        },
-
-        removeGlobalOverlay: function () {
-            if (this.overlayCount === 0) {
-                console.info("Could not remove overlay. None existing.");
-                return false;
-            }
-
-            this.overlayCount--;
-
-            console.info("overlay removed. count: " + this.overlayCount);
-
-            if (this.overlayCount === 0) {
-                query('.ec-overlay').forEach(domConstruct.destroy);
-            }
-
-            return true;
         }
     });
 });

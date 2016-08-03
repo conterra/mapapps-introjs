@@ -1,223 +1,903 @@
 {
-  "load": {
-    "bundleLocations": [
-      "localbundles",
-      "bundles"
-    ],
-    "allowedBundles": [
-      "system",
-      "splashscreen",
-      "map",
-      "themes",
-      "templates",
-      "templatelayout",
-      "windowmanager",
-      "toolset",
-      "toolrules",
-      "basemaptoggler",
-      "legend",
-      "banner",
-      "custominfo",
-      "mapflow",
-      "agsprinting",
-      "dn_introjs"
-    ],
-    "skipBundles": [],
-    "require": [
-      "${app}.app"
-    ],
-    "i18n": [
-      "bundle"
-    ]
-  },
-  "bundles": {
-    "basemaptoggler": {
-      "DropDownBasemapToggler": {
-        "showLabel": true
-      }
+    "properties": {
+        "title": "${apptitle}"
     },
-    "banner": {
-      "BannerWidget": {
-        "image": "resource('${app}:/images/logo_conterra.png')",
-        "imageWidth": 120,
-        "link": "http://www.conterra.de"
-      }
+    "load": {
+        "bundleLocations": [
+            "localbundles",
+            "bundles"
+        ],
+        "allowedBundles": [
+            "console", "custominfo", "filesaver", "languagetoggler", "mobileview", "notifier", "parametermanager", "qrcode", "remotechannels", "splashscreen", "system", "templatelayout", "templates", "themes", "toolrules", "toolset", "banner",
+            "basemapgallery", "basemaptoggler",
+            "contentviewer", "followme", "infoviewer", "map", "mapdesk", "webmap",
+            "agsprinting", "bookmarks", "coordinatefinder", "coordinateviewer", "legend", "locateme", "magnifier", "maptip", "measurement", "navigationtoolset", "overviewmap", "redlining", "routing", "scalebar", "undoredo",
+            "reportstore", "reporttool",
+            "agssearch", "geonames", "locator", "omnisearch",
+            "featureinfo", "resultcenter", "selection",
+            "mapflow", "mobiletoc", "dn_introjs"
+        ],
+        "require": ["${app}.app"],
+        "i18n": ["bundle"],
+        "styles": ["${app}:app.css"]
     },
-    "map": {
-      "MapState": {
-        "initialExtent": {
-          "xmin": -1100000,
-          "ymin": 4000000,
-          "xmax": 3500000,
-          "ymax": 8800000,
-          "spatialReference": {
-            "wkid": 3857
-          }
-        }
-      },
-      "MapModelFactory": {
-        "_configData": {
-          "maps": [
-            {
-              "id": "default",
-              "glass_pane": [
+    "bundles": {
+        "agssearch": {
+            "AutoStoreRegistration": {
+                "componentEnabled": true
+            },
+            "AGSStore": [
                 {
-                  "id": "settlements",
-                  "enabled": true,
-                  "maptip": {
-                    "content": "<p><b>{name2}<br />{name3}</b></p><p>{street}<br />{plz_city}</p>",
-                    "dimensions": {
-                      "width": 180,
-                      "height": 110
-                    }
-                  },
-                  "infoTemplate": {
-                    "title": "${name}",
-                    "content": "<p><b>${name2}<br />${name3}</b></p><p>${street}<br />${plz_city}</p><p>${map.glasspane.settlements.tel} ${tel}<br /><a href='mailto:${email}'>${email}</a></p><p><a href='${link}' target='_blank'>${map.glasspane.settlements.link}</a></p>",
-                    "dimensions": {
-                      "width": 250,
-                      "height": 250
-                    }
-                  },
-                  "graphics": [
+                    "title": "${agssearch.countries.title}",
+                    "description": "${agssearch.countries.description}",
+                    "omniSearchLabelAttr": "cc",
+                    "omniSearchSearchAttr": "cc",
+                    "idProperty": "OBJECTID",
+                    "url": "http://water.discomap.eea.europa.eu/arcgis/rest/services/BathingWater/BathingWater_Dyna_WM/MapServer/0",
+                    "useIn": ["omnisearch"],
+                    "filterOptions": {
+                        "suggestContains": true
+                    },
+                    "omniSearchTypingDelay": 500,
+                    "omniSearchPageSize": 20,
+                    "omniSearchDefaultLabel": "${agssearch.countries.placeHolder}",
+                    "fetchIdProperty": true,
+                    "id": "bathingwater_1"
+                }]
+        },
+        "banner": {
+            "BannerWidget": {
+                "image": "resource('${app}:/images/logo_conterra.png')",
+                "imageWidth": 120,
+                "link": "http://www.conterra.de"
+            }
+        },
+        "basemapgallery": {
+            "Gallery": {
+                "showOwnMaps": false
+            }
+        },
+        "basemaptoggler": {
+            "DropDownBasemapToggler": {
+                "showLabel": true
+            }
+        },
+        "bookmarks": {
+            "BookmarksFactory": {
+                "storageName": "Mapapps_mapmarks",
+                "bookmarksOpts": {
+                    "editable": true
+                },
+                "predefinedBookmarks": [{
+                        "extent": {
+                            "spatialReference": {
+                                "wkid": 3857
+                            },
+                            "xmax": 1.0576968521053234E7,
+                            "xmin": -8208195.550306687,
+                            "ymax": 1.2931705115558533E7,
+                            "ymin": 2648784.574413076
+                        },
+                        "name": "${bookmarks.predefined.europe}"
+                    },
                     {
-                      "geometry": {
-                        "x": 851833,
-                        "y": 6788378,
-                        "spatialReference": {
-                          "wkid": 3857
-                        }
-                      },
-                      "attributes": {
-                        "name": "con terra",
-                        "name2": "con terra GmbH",
-                        "name3": "",
-                        "street": "Martin-Luther-King-Weg 24",
-                        "plz_city": "DE-48155 Muenster",
-                        "tel": "+49 89 207 005 2200",
-                        "email": "info@conterra.de",
-                        "link": "http://www.conterra.de/"
-                      },
-                      "symbol": {
-                        "color": [
-                          221,
-                          0,
-                          85,
-                          230
-                        ],
-                        "size": 12,
-                        "angle": 0,
-                        "xoffset": 0,
-                        "yoffset": 0,
-                        "type": "esriSMS",
-                        "style": "esriSMSSquare",
-                        "outline": {
-                          "color": [
-                            255,
-                            255,
-                            255,
-                            255
-                          ],
-                          "width": 0,
-                          "type": "esriSLS",
-                          "style": "esriSLSSolid"
-                        }
-                      }
+                        "extent": {
+                            "spatialReference": {
+                                "wkid": 3857
+                            },
+                            "xmax": 2357847.7436069767,
+                            "xmin": 9702.234686995856,
+                            "ymax": 7299468.689048652,
+                            "ymin": 6014103.621405475
+                        },
+                        "name": "${bookmarks.predefined.germany}"
+                    },
+                    {
+                        "extent": {
+                            "spatialReference": {
+                                "wkid": 3857
+                            },
+                            "xmax": 1564928.2306908383,
+                            "xmin": 1418169.1363834972,
+                            "ymax": 6932972.247678364,
+                            "ymin": 6852636.9309507515
+                        },
+                        "name": "Berlin"
+                    }]
+            }
+        },
+        "contentviewer": {
+            "ContentRegistration": {
+                "contentRules": [
+                    {
+                        "info": {
+                            "valueNotFoundString": "-",
+                            "type": "CustomTemplate",
+                            "title": "{short_name}",
+                            "showDetailsButton": true,
+                            "skipProperties": [],
+                            "template": "<br/><h1>{name}</h1><div><hr /><a href=\"http://www.google.de/search?q={name}\" target=\"_blank\">${contentviewer.regions.search}</a></div>"
+                        },
+                        "windowSize": {
+                            "w": 280,
+                            "h": 280
+                        },
+                        "matches": {
+                            "context": {
+                                "mapModelNodeId": "regions/0"
+                            }
+                        },
+                        "title": "${contentviewer.regions.title}",
+                        "detail": {
+                            "title": "{name}",
+                            "type": "Grid",
+                            "valueNotFoundString": "-",
+                            "allowedProperties": [
+                                "OBJECTID",
+                                "Shape",
+                                "PK_UID",
+                                "short_name",
+                                "pre_2012",
+                                "code",
+                                "name",
+                                "Shape_Length",
+                                "Shape_Area",
+                                "Region"
+                            ]
+                        },
+                        "type": "Grid"
                     }
-                  ]
-                }
-              ],
-              "operationalLayer": [],
-              "baseLayer": [
-                {
-                  "title": "${service.streets}",
-                  "service": "streets",
-                  "enabled": true
+                ]
+            }
+        },
+        "custominfo": {
+            "CustomInfoToggleTool": [{
+                    "widgetSettings": {
+                        "content": "${custominfo.imprint.content}",
+                        "window": {
+                            "marginBox": {
+                                "w": 300,
+                                "h": 400
+                            },
+                            "draggable": true,
+                            "closable": true,
+                            "modal": false,
+                            "maximizable": false,
+                            "resizable": true,
+                            "title": "${custominfo.imprint.title}"
+                        }
+                    },
+                    "type": "IMPRINT",
+                    "toolClass": "ctInfo",
+                    "title": "${custominfo.imprint.title}",
+                    "tooltip": "${custominfo.imprint.tooltip}",
+                    "iconClass": "icon-custom-info-imprint",
+                    "togglable": true,
+                    "id": "IMPRINT_Imprint_1385994559598_CustomInfoTool"
+                }]
+        },
+        "featureinfo": {
+            "FeatureInfoController": {
+                "clickTolerance": 15
+            }
+        },
+        "geonames": {
+            "PostalCodeSearchStore": {
+                "componentEnabled": true
+            }
+        },
+        "languagetoggler": {
+            "LanguageToggler": {
+                "languageNames": {
+                    "en": "English",
+                    "de": "Deutsch"
                 },
-                {
-                  "title": "${service.topo}",
-                  "service": "worldtopo",
-                  "enabled": false
-                },
-                {
-                  "title": "${service.aerial}",
-                  "service": "worldimage",
-                  "enabled": false
+                "languageTemplate": "${name}"
+            }
+        },
+        "locateme": {
+            "LocateMe": {
+                "showPositionLogs": true
+            }
+        },
+        "map": {
+            "MapModelFactory": {
+                "_configData": {
+                    "maps": [{
+                            "id": "default",
+                            "glass_pane": [{
+                                    "id": "settlements",
+                                    "enabled": true,
+                                    "maptip": {
+                                        "content": "<p><b>{name2}<br />{name3}</b></p><p>{street}<br />{plz_city}</p>",
+                                        "dimensions": {
+                                            "width": 180,
+                                            "height": 110
+                                        }
+                                    },
+                                    "infoTemplate": {
+                                        "title": "${name}",
+                                        "content": "<p><b>${name2}<br />${name3}</b></p><p>${street}<br />${plz_city}</p><p>${map.glasspane.settlements.tel} ${tel}<br /><a href='mailto:${email}'>${email}</a></p><p><a href='${link}' target='_blank'>${map.glasspane.settlements.link}</a></p>",
+                                        "dimensions": {
+                                            "width": 250,
+                                            "height": 250
+                                        }
+                                    },
+                                    "graphics": [
+                                        {
+                                            "geometry": {
+                                                "x": 851833,
+                                                "y": 6788378,
+                                                "spatialReference": {
+                                                    "wkid": 3857
+                                                }
+                                            },
+                                            "attributes": {
+                                                "name": "con terra",
+                                                "name2": "con terra GmbH",
+                                                "name3": "",
+                                                "street": "Martin-Luther-King-Weg 24",
+                                                "plz_city": "DE-48155 Muenster",
+                                                "tel": "+49 89 207 005 2200",
+                                                "email": "info@conterra.de",
+                                                "link": "http://www.conterra.de/"
+                                            },
+                                            "symbol": {
+                                                "color": [221,
+                                                    0,
+                                                    85,
+                                                    230],
+                                                "size": 12,
+                                                "angle": 0,
+                                                "xoffset": 0,
+                                                "yoffset": 0,
+                                                "type": "esriSMS",
+                                                "style": "esriSMSSquare",
+                                                "outline": {
+                                                    "color": [255,
+                                                        255,
+                                                        255,
+                                                        255],
+                                                    "width": 0,
+                                                    "type": "esriSLS",
+                                                    "style": "esriSLSSolid"
+                                                }
+                                            }
+                                        }]
+                                }],
+                            "operationalLayer": [
+                                {
+                                    "id": "bathingwater",
+                                    "title": "${map.operational.bathingwater.title}",
+                                    "enabled": false,
+                                    "service": "bathingwater",
+                                    "category": {
+                                        "title": "${map.operational.bathingwater.title}",
+                                        "description": "${map.operational.bathingwater.description}",
+                                        "imgUrl": "${app}:images/mapCover2.png"
+                                    },
+                                    "layers": ["*"],
+                                    "opacity": 1
+                                },
+                                {
+                                    "id": "natura2000",
+                                    "title": "${map.operational.natura2000.title}",
+                                    "enabled": false,
+                                    "service": "natura000",
+                                    "category": {
+                                        "title": "${map.operational.natura2000.title}",
+                                        "description": "${map.operational.natura2000.description}",
+                                        "imgUrl": "${app}:images/mapCover3.png"
+                                    },
+                                    "layers": ["*"],
+                                    "opacity": 1
+                                },
+                                {
+                                    "id": "regions",
+                                    "title": "${map.operational.regions.title}",
+                                    "enabled": false,
+                                    "service": "regions",
+                                    "category": {
+                                        "title": "${map.operational.regions.title}",
+                                        "description": "${map.operational.regions.description}",
+                                        "imgUrl": "${app}:images/mapCover1.png"
+                                    },
+                                    "layers": ["*"],
+                                    "opacity": 0.5
+                                }],
+                            "baseLayer": [{
+                                    "enabled": false,
+                                    "service": "worldimage"
+                                },
+                                {
+                                    "enabled": true,
+                                    "service": "worldtopo"
+                                },
+                                {
+                                    "enabled": false,
+                                    "service": "streets"
+                                }]
+                        }]
                 }
-              ]
-            }
-          ]
-        }
-      },
-      "MappingResourceRegistryFactory": {
-        "_knownServices": {
-          "services": [
-            {
-              "id": "worldimage",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
-              "type": "AGS_TILED",
-              "title": "${map.base.aerial.title}",
-              "description": "${map.base.aerial.description}"
             },
-            {
-              "id": "worldtopo",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
-              "type": "AGS_TILED",
-              "title": "${map.base.topo.title}",
-              "description": "${map.base.topo.description}"
+            "MapState": {
+                "initialExtent": {
+                    "xmin": -896965.2750203621,
+                    "xmax": 3212289.3655896215,
+                    "ymin": 5170567.199262223,
+                    "ymax": 8086181.206171212,
+                    "wkid": 3857
+                }
             },
-            {
-              "id": "streets",
-              "description": "${map.base.streets.description}",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
-              "type": "AGS_TILED",
-              "title": "${map.base.streets.title}"
+            "MappingResourceRegistryFactory": {
+                "_knownServices": {
+                    "services": [{
+                            "id": "worldimage",
+                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+                            "type": "AGS_TILED",
+                            "title": "${map.base.aerial.title}",
+                            "description": "${map.base.aerial.description}"
+                        },
+                        {
+                            "id": "worldtopo",
+                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+                            "type": "AGS_TILED",
+                            "title": "${map.base.topo.title}",
+                            "description": "${map.base.topo.description}"
+                        },
+                        {
+                            "id": "streets",
+                            "description": "${map.base.streets.description}",
+                            "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+                            "type": "AGS_TILED",
+                            "title": "${map.base.streets.title}"
+                        },
+                        {
+                            "id": "bathingwater",
+                            "url": "http://water.discomap.eea.europa.eu/arcgis/rest/services/BathingWater/BathingWater_Dyna_WM/MapServer",
+                            "type": "AGS_DYNAMIC",
+                            "title": "${map.operational.bathingwater.title}",
+                            "description": "${map.operational.bathingwater.description}",
+                            "layers": [
+                                {
+                                    "id": "0",
+                                    "title": "${map.operational.bathingwater.layers.title}",
+                                    "maxScale": 30000001,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "1",
+                                    "title": "${map.operational.bathingwater.layers.title}",
+                                    "maxScale": 5000001,
+                                    "minScale": 30000000,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "2",
+                                    "title": "${map.operational.bathingwater.layers.title}",
+                                    "maxScale": 3000001,
+                                    "minScale": 5000000,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "3",
+                                    "title": "${map.operational.bathingwater.layers.title}",
+                                    "maxScale": 700001,
+                                    "minScale": 3000000,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "4",
+                                    "title": "${map.operational.bathingwater.layers.title}",
+                                    "maxScale": 500001,
+                                    "minScale": 700000,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "5",
+                                    "title": "${map.operational.bathingwater.layers.title}",
+                                    "maxScale": 200001,
+                                    "minScale": 500000,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "6",
+                                    "title": "${map.operational.bathingwater.layers.title}",
+                                    "minScale": 200000,
+                                    "enabled": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": "regions",
+                            "url": "http://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/Biogeographicalregions_Dyna_WM/MapServer",
+                            "type": "AGS_DYNAMIC",
+                            "title": "${map.operational.regions.title}",
+                            "description": "${map.operational.regions.description}",
+                            "layers": [
+                                {
+                                    "id": "0",
+                                    "title": "${map.operational.regions.layers.0}",
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "1",
+                                    "title": "${map.operational.regions.layers.1}",
+                                    "enabled": false
+                                },
+                                {
+                                    "id": "2",
+                                    "title": "${map.operational.regions.layers.2}",
+                                    "enabled": false
+                                },
+                                {
+                                    "id": "3",
+                                    "title": "${map.operational.regions.layers.3}",
+                                    "enabled": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": "natura000",
+                            "url": "http://discomap.eea.europa.eu/arcgis/rest/services/Bio/Natura2000_Dyna_WM/MapServer",
+                            "type": "AGS_DYNAMIC",
+                            "title": "${map.operational.natura2000.title}",
+                            "description": "${map.operational.natura2000.description}",
+                            "layers": [
+                                {
+                                    "id": "1",
+                                    "title": "${map.operational.natura2000.layers.1}",
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "2",
+                                    "title": "${map.operational.natura2000.layers.2}",
+                                    "parentId": "1",
+                                    "maxScale": 10000000,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "3",
+                                    "title": "${map.operational.natura2000.layers.3}",
+                                    "parentId": "1",
+                                    "maxScale": 300000,
+                                    "minScale": 9999999,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "4",
+                                    "title": "${map.operational.natura2000.layers.4}",
+                                    "parentId": "1",
+                                    "minScale": 299999,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "5",
+                                    "title": "${map.operational.natura2000.layers.5}",
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "6",
+                                    "title": "${map.operational.natura2000.layers.6}",
+                                    "parentId": "5",
+                                    "maxScale": 10000000,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "7",
+                                    "title": "${map.operational.natura2000.layers.7}",
+                                    "parentId": "5",
+                                    "maxScale": 300000,
+                                    "minScale": 9999999,
+                                    "enabled": true
+                                },
+                                {
+                                    "id": "8",
+                                    "title": "${map.operational.natura2000.layers.8}",
+                                    "parentId": "5",
+                                    "minScale": 299999,
+                                    "enabled": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "MapWidgetFactory": {
+                "esriMapOpts": {
+                    "slider": false,
+                    "nav": false,
+                    "logo": true,
+                    "sliderStyle": "small",
+                    "doubleClickZoom": true,
+                    "clickRecenter": true,
+                    "pan": true,
+                    "rubberBandZoom": true,
+                    "keyboardNavigation": true,
+                    "scrollWheelZoom": true,
+                    "sliderPosition": "bottom-right",
+                    "displayGraphicsOnPan": true,
+                    "fadeOnZoom": true,
+                    "showAttribution": true,
+                    "sliderOrientation": "vertical",
+                    "sliderLabels": [""],
+                    "navigationMode": "css-transforms"
+                }
             }
-          ]
+        },
+        "mapflow": {
+            "MapFlow": {
+                "nodeDepth": 5,
+                "autoFlipActiveCover": true,
+                "autoActivate": true
+            }
+        },
+        "omnisearch": {
+            "OmniSearchFactory": {
+                "comboBoxOpts": {
+                    "selectFirstResultOnEnter": false
+                }
+            }
+        },
+        "overviewmap": {
+            "OverviewMap": {
+                "serviceDefinition": {
+                    "service": "worldtopo",
+                    "layers": ["*"]
+                }
+            }
+        },
+        "resultcenter": {
+            "ActionController": {
+                "zoomToFeatures": true,
+                "zoomToSelected": true,
+                "centerSelected": true,
+                "zoomAfterDeletion": true
+            },
+            "DataView": {
+                "DGRID": {
+                    "checkboxSelection": true,
+                    "columns": [{
+                            "matches": {
+                                "identifier": true,
+                                "type": "number"
+                            },
+                            "title": "ID"
+                        }, {
+                            "matches": {
+                                "name": "NAME"
+                            },
+                            "title": "${resultcenter.fields.title}",
+                            "width": 32
+                        }, {
+                            "matches": {
+                                "name": {
+                                    "$in": ["AREA", "PERIMETER"]
+                                }
+                            },
+                            "skip": true
+                        }, {
+                            "matches": {
+                                "name": {
+                                    "$exists": true
+                                }
+                            }
+                        }]
+                },
+                "ICON": {
+                    "iconFields": ["adapter"]
+                }
+            },
+            "FeatureMapVisualizer": {
+                "useDataViewPaging": false
+            },
+            "TriggerShowResultCenterCommand": {
+                "showToolOnData": true,
+                "autoOpen": true,
+                "hideToolOnEmpty": true,
+                "autoClose": true
+            }
+        },
+        "selection": {
+            "SelectionAction": {
+                "autoDeactivateTool": true
+            }
+        },
+        "templates": {
+            "TemplateModel": {
+                "_selectedTemplate": "seasons",
+                "_templates": [{
+                        "name": "seasons",
+                        "widgets": [{
+                                "widgetRole": "printDialogAGSPrinting",
+                                "window": {
+                                    "marginBox": {
+                                        "l": 20,
+                                        "t": 140,
+                                        "w": 327,
+                                        "h": 210
+                                    }
+                                }
+                            }, {
+                                "widgetRole": "coordFinder",
+                                "window": {
+                                    "marginBox": {
+                                        "h": 130,
+                                        "l": 20,
+                                        "t": 140
+                                    }
+                                }
+                            }, {
+                                "widgetRole": "parametrizedURL",
+                                "window": {
+                                    "marginBox": {
+                                        "w": 385,
+                                        "h": 300,
+                                        "l": 20,
+                                        "t": 140
+                                    }
+                                }
+                            }, {
+                                "widgetRole": "bookmarkstoolbar",
+                                "window": {
+                                    "marginBox": {
+                                        "w": 327,
+                                        "h": 250,
+                                        "l": 20,
+                                        "t": 145
+                                    }
+                                }
+                            }, {
+                                "widgetRole": "measurementtoolbar",
+                                "window": {
+                                    "marginBox": {
+                                        "w": 327,
+                                        "h": 165,
+                                        "l": 20,
+                                        "t": 140
+                                    }
+                                }
+                            }, {
+                                "widgetRole": "magnifier",
+                                "window": {
+                                    "marginBox": {
+                                        "w": 255,
+                                        "h": 180,
+                                        "r": 90,
+                                        "b": 99
+                                    }
+                                }
+                            }, {
+                                "widgetRole": "overviewMap",
+                                "window": {
+                                    "marginBox": {
+                                        "w": 255,
+                                        "h": 180,
+                                        "r": 90,
+                                        "b": 99
+                                    }
+                                }
+                            }, {
+                                "widgetRole": "storeListDataView",
+                                "window": {
+                                    "marginBox": {
+                                        "w": 550,
+                                        "h": 300,
+                                        "l": 20,
+                                        "t": 145
+                                    }
+                                }
+                            }]
+                    }]
+            }
+        },
+        "themes": {
+            "ThemeModel": {
+                "_selectedTheme": "everlasting",
+                "_themes": [
+                    {
+                        "name": "everlasting"
+                    },
+                    {
+                        "name": "spring"
+                    },
+                    {
+                        "name": "summer"
+                    },
+                    {
+                        "name": "autumn"
+                    },
+                    {
+                        "name": "winter"
+                    }
+                ]
+            },
+            "ThemeSelector": {
+                "componentEnabled": true
+            }
+        },
+        "toolrules": {
+            "ToolRuleManager": {
+                "_rules": {
+                    "agsprinttool": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape",
+                                "tablet_portrait",
+                                "tablet_landscape"]
+                        }
+                    },
+                    "urlEncoder": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape"]
+                        }
+                    },
+                    "measurementtool": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape"]
+                        }
+                    },
+                    "redlining_tools": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape"]
+                        }
+                    },
+                    "navigation_tools": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape"]
+                        }
+                    },
+                    "coordinateFinderTool": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape"]
+                        }
+                    },
+                    "bookmarkstool": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape"]
+                        }
+                    },
+                    "magnifier": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape",
+                                "tablet_portrait",
+                                "tablet_landscape"]
+                        }
+                    },
+                    "overviewmap": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape"]
+                        }
+                    },
+                    "storeListDialogToggleTool": {
+                        "ruleSuccessProperty": "visibility",
+                        "not": {
+                            "subLayoutNames": ["mobile_portrait",
+                                "mobile_landscape",
+                                "tablet_portrait",
+                                "tablet_landscape"]
+                        }
+                    },
+                    "reportTool": {
+                        "datasourceIdInResultcenter": ["bathingwater/0", "bathingwater/1", "bathingwater/2", "bathingwater/3", "bathingwater/4", "bathingwater/5", "bathingwater/6"],
+                        "ruleSuccessProperty": "visibility"
+                    }
+                }
+            }
+        },
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": [{
+                        "id": "dropdown1",
+                        "cssClass": "ctWDYWBtn ctPrimaryInput",
+                        "title": "${toolsets.whatdoyouwant}",
+                        "tools": ["agsprinttool",
+                            "urlEncoder",
+                            "measurementtool",
+                            "redlining_tools",
+                            "storeListDialogToggleTool",
+                            "navigation_tools",
+                            "coordinateFinderTool",
+                            "bookmarkstool"],
+                        "container": "map",
+                        "position": {
+                            "rel_t": 72,
+                            "rel_l": 20
+                        },
+                        "windowType": "dropdown"
+                    },
+                    {
+                        "id": "redlining_tools",
+                        "title": "${toolsets.redliningTools}",
+                        "tooltip": "${toolsets.redliningToolsTooltip}",
+                        "tools": ["drawpointtool",
+                            "drawlinetool",
+                            "drawpolylinetool",
+                            "drawfreehandpolylinetool",
+                            "drawpolygontool",
+                            "drawfreehandpolygontool",
+                            "drawellipsetool",
+                            "drawarrowtool",
+                            "drawTextTool",
+                            "drawSymbolTool",
+                            "*EditTool",
+                            "redliningSymbolPropertiesTool",
+                            "undoTool",
+                            "redoTool",
+                            "drawerasealltool"],
+                        "container": "map",
+                        "position": {
+                            "rel_t": 110,
+                            "rel_l": 20
+                        },
+                        "max_horizontal": 2,
+                        "registerTool": {
+                            "groups": ["dropdown1"]
+                        },
+                        "deactivateToolsOnHide": true,
+                        "window": {
+                            "closable": true
+                        }
+                    },
+                    {
+                        "id": "navigation_tools",
+                        "title": "${toolsets.navigationTools}",
+                        "tooltip": "${toolsets.navigationToolsTooltip}",
+                        "tools": ["initialExtentTool",
+                            "zoomInTool",
+                            "zoomOutTool",
+                            "panTool",
+                            "zoomToNextExtentTool",
+                            "zoomToPrevExtentTool",
+                            "zoomToFullExtentTool"],
+                        "container": "map",
+                        "position": {
+                            "rel_t": 110,
+                            "rel_l": 20
+                        },
+                        "registerTool": {
+                            "groups": ["dropdown1"]
+                        },
+                        "deactivateToolsOnHide": true,
+                        "window": {
+                            "closable": true
+                        }
+                    },
+                    {
+                        "id": "mapview_tools",
+                        "title": "${toolsets.mapviewTools}",
+                        "tooltip": "${toolsets.mapviewToolsTooltip}",
+                        "tools": ["zoomInClickTool",
+                            "zoomOutClickTool",
+                            "locateme",
+                            "magnifier",
+                            "overviewmap",
+                            "*CustomInfoTool"],
+                        "container": "map",
+                        "max_horizontal": 1,
+                        "windowType": "css_positioned",
+                        "cssClass": "notitle muted mapview_tools",
+                        "deactivateToolsOnHide": true
+                    }
+                ]
+            }
         }
-      }
-    },
-    "toolset": {
-      "ToolsetManager": {
-        "toolsets": [
-          {
-            "id": "tools",
-            "cssClass": "notitle",
-            "windowType": "css_positioned",
-            "title": "${toolsets.whatdoyouwant}",
-            "tools": [
-              "agsprinttool",
-              "measurementtool",
-              "storeListDialogToggleTool",
-              "navigation_tools",
-              "coordinateFinderTool",
-              "bookmarkstool"
-            ],
-            "container": "map",
-            "position": {
-              "rel_t": 72,
-              "rel_l": 20
-            }
-          },
-          {
-            "id": "mapview_tools",
-            "title": "${toolsets.mapviewTools}",
-            "tooltip": "${toolsets.mapviewToolsTooltip}",
-            "tools": [
-              "zoomInClickTool",
-              "zoomOutClickTool",
-              "locateme",
-              "magnifier",
-              "overviewmap"
-            ],
-            "container": "map",
-            "max_horizontal": 1,
-            "windowType": "css_positioned",
-            "cssClass": "notitle muted mapview_tools",
-            "deactivateToolsOnHide": true
-          }
-        ]
-      }
     }
-  }
 }

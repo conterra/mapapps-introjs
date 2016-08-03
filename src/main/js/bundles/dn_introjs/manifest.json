@@ -5,14 +5,14 @@
   "Bundle-Description": "${bundleDescription}",
   "Bundle-Vendor": "con terra GmbH",
   "Product-Name": "con terra Developer Network",
-  //"Bundle-StartLevel": 10,
+  "Bundle-StartLevel": 51,
   "Require-Bundle": [
   ],
   "CSS-Themes-Extension": [
     {
       "name": "*",
       "files": [
-        "./styles/intro.css"
+        "./styles/introjs.css"
       ]
     }
   ],

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2015 con terra GmbH (info@conterra.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,9 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define(["dojo/i18n!./nls/bundle"],
-function(i18n) {
-return {
-	i18n : i18n
+/*
+    An own application owned css file.
+    It should be used to define application own css styles, e.g. special tool icons and so on
+*/
+/* example */
+/* .app_traffic.night .basemapToggler {
+    border: 5px solid red;
 }
-});
+*/
+.customStyle {
+    /* app.css must not empty, otherwise it will break the startup in safari!*/
+    border : 1px solid;
+}
