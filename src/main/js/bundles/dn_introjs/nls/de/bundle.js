@@ -21,8 +21,8 @@ define({
         navigation: "Klicken und halten sie die linke Maustaste, um die Karte zu verschieben.",
         mapview: "Mit diesen Tasten kontrollieren Sie die Kartenansicht.",
         basemap: "Mit Hilfe der Dropdown-Liste k\u00f6nnen sie die Hintergrundkarte wechseln.",
-        theme: "Hier können Sie das aktuelle Farbschema wechseln.",
-        language: "Eine andere Sprache können Sie hier ausw\u00e4hlen.",
+        theme: "Hier k\u00f6nnen Sie das aktuelle Farbschema wechseln.",
+        language: "Eine andere Sprache k\u00f6nnen Sie hier ausw\u00e4hlen.",
         functions: "Zus\u00e4tzliche Funktionalit\u00e4t wird durch die Tasten in dieser Dropdown-Liste zur Verf\u00fcgung gestellt. Sie fungieren als Schalter und aktivieren oder deaktivieren die angegebene Funktionalit\u00e4t.",
         mapflow: "Hier k\u00f6nnen Sie die dargestellten Inhalte der Karte beeinflussen.",
         legend: "Verwenden Sie die Legende, um die Symbolisierung der aktuell angezeigten Layer zu sehen.",
@@ -33,9 +33,9 @@ define({
         closeButton: "Schliessen",
         mapScaling: "mapScaling",
         mapLoading: "mapLoading",
-        next: "weiter",
-        back: "zur\u00fcck",
-        skip: "\u00fcberspringen",
-        done: "beenden"
+        next: "Weiter",
+        back: "Zur\u00fcck",
+        skip: "\u00dcberspringen",
+        done: "Beenden"
     }
 });

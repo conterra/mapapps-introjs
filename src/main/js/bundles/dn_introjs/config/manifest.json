@@ -1,0 +1,73 @@
+{
+  "Bundle-SymbolicName": "dn_introjs-config",
+  "Bundle-Version": "1.0.0",
+  "Bundle-Name": "${bundleName}",
+  "Bundle-Description": "${bundleDescription}",
+  "Bundle-Vendor": "con terra GmbH",
+  "Require-Bundle": [
+    {
+      "name": "dataform"
+    },
+    {
+      "name": "wizard"
+    }
+  ],
+  "Components": [
+    {
+      "name": "BuilderEntry",
+      "impl": "ct/Stateful",
+      "provides": [
+        "wizard.MenuEntry"
+      ],
+      "propertiesConstructor": true,
+      "properties": {
+        "menuNode": {
+          "priority": 0,
+          "title": "${windowTitle}",
+          "widget": "introjsBuilderWidget",
+          "iconUrl": "resource('styles/images/bundleIcon.png')"
+        }
+      }
+    },
+    {
+      "name": "BuilderWidget",
+      "impl": "wizard/DataFormBuilderWidgetFactory",
+      "provides": [
+        "dijit.wizard.Widget"
+      ],
+      "immediate": true,
+      "instanceFactory": true,
+      "properties": {
+        "dataformFile": "resource('./DataForm.json')",
+        "bid": "dn_introjs",
+        "pid": "dn_introjs-UserTutorial",
+        "id": "introjsBuilderWidget",
+        "defaultProperties": {
+          "showStepNumbers": false,
+          "showBullets": true,
+          "showProgress": false,
+          "showButtons": true,
+          "keyboardNavigation": true,
+          "exitOnEsc": true,
+          "exitOnOverlayClick": false,
+          "nextLabel": "${intro.next}",
+          "prevLabel": "${intro.back}",
+          "skipLabel": "${intro.skip}",
+          "doneLabel": "${intro.done}",
+          "steps": []
+        },
+        "description": "${description}"
+      },
+      "references": [
+        {
+          "name": "_configAdminService",
+          "providing": "ct.framework.api.ConfigurationAdmin"
+        },
+        {
+          "name": "_dataformService",
+          "providing": "dataform.DataFormService"
+        }
+      ]
+    }
+  ]
+}

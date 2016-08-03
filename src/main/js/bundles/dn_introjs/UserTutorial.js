@@ -16,82 +16,41 @@
 define([
     "dojo/_base/declare",
     "dojo/_base/lang",
+    "dojo/_base/array",
     "dojo/dom-construct",
     "dojo/query",
     "dojo/_base/window",
     "./intro",
     "ct/async"
-], function (declare, d_lang, domConstruct, query, win, introjs, ct_async) {
+], function (declare, d_lang, d_array, domConstruct, query, win, introjs, ct_async) {
     return declare([], {
         overlayUtils: null,
         overlayCount: 0,
         activate: function () {
             ct_async(function () {
-                this.startTutorial();
+                this.startIntro();
             }, this, 1000);
         },
-        startTutorial: function () {
-            var i18n = this._i18n.get().intro;
+        startIntro: function () {
             var intro = introjs();
+            var properties = this._properties;
+            var steps = properties.steps;
+            d_array.forEach(steps, function (step) {
+                step.element = document.querySelector(step.element);
+            });
             intro.setOptions({
-                showStepNumbers: false,
-                showBullets: true,
-                exitOnOverlayClick: false,
-                nextLabel: i18n.next + " &rarr;",
-                prevLabel: "&larr; " + i18n.back,
-                skipLabel: i18n.skip,
-                doneLabel: i18n.done,
-                steps: [
-                    {
-                        intro: i18n.familiarise
-                    },
-                    {
-                        intro: i18n.navigation
-                    },
-                    {
-                        element: document.querySelector('.mapview_tools'), // mapview
-                        intro: i18n.mapview,
-                        position: 'left'
-                    },
-                    {
-                        element: document.querySelector('.themeSelector'), // theme selector
-                        intro: i18n.theme,
-                        position: 'bottom'
-                    },
-                    {
-                        element: document.querySelector('.basemapToggler'), // basemap toggler
-                        intro: i18n.basemap,
-                        position: 'bottom'
-                    },
-                    {
-                        element: document.querySelector('.languageToggler'), // language toggler
-                        intro: i18n.language,
-                        position: 'bottom'
-                    },
-                    {
-                        element: document.querySelector('.omnisearch'), // omnisearch
-                        intro: i18n.omnisearch,
-                        position: 'bottom'
-                    },
-                    {
-                        element: document.querySelector('.ctWDYWBtn'), // functions
-                        intro: i18n.functions,
-                        position: 'right'
-                    },
-                    {
-                        element: document.querySelector('.ctTool_mapflowToggleTool'), // mapflow
-                        intro: i18n.mapflow,
-                        position: 'top'
-                    },
-                    {
-                        element: document.querySelector('.ctTool_legendToggleTool'), // legend
-                        intro: i18n.legend,
-                        position: 'top'
-                    },
-                    {
-                        intro: i18n.featureinfo
-                    }
-                ]
+                showStepNumbers: properties.showStepNumbers,
+                showBullets: properties.showBullets,
+                showProgress: properties.showProgress,
+                showButtons: properties.showButtons,
+                keyboardNavigation: properties.keyboardNavigation,
+                exitOnEsc: properties.exitOnEsc,
+                exitOnOverlayClick: properties.exitOnOverlayClick,
+                nextLabel: properties.nextLabel + " &rarr;",
+                prevLabel: "&larr; " + properties.prevLabel,
+                skipLabel: properties.skipLabel,
+                doneLabel: properties.doneLabel,
+                steps: properties.steps
             });
             intro.start();
         }

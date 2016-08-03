@@ -1,0 +1,95 @@
+{
+  "dataform-version": "1.0.0",
+  "type": "gridpanel",
+  "showLabels": true,
+  "children": [
+    {
+      "type": "checkbox",
+      "field": "showStepNumbers",
+      "title": "${showStepNumbers.title}",
+      "tooltip": "${showStepNumbers.description}",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "field": "showBullets",
+      "title": "${showBullets.title}",
+      "tooltip": "${showBullets.description}",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "field": "showProgress",
+      "title": "${showProgress.title}",
+      "tooltip": "${showProgress.description}",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "field": "showButtons",
+      "title": "${showButtons.title}",
+      "tooltip": "${showButtons.description}",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "field": "keyboardNavigation",
+      "title": "${keyboardNavigation.title}",
+      "tooltip": "${keyboardNavigation.description}",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "field": "exitOnEsc",
+      "title": "${exitOnEsc.title}",
+      "tooltip": "${exitOnEsc.description}",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "field": "exitOnOverlayClick",
+      "title": "${exitOnOverlayClick.title}",
+      "tooltip": "${exitOnOverlayClick.description}",
+      "required": true
+    },
+    {
+      "type": "textbox",
+      "field": "nextLabel",
+      "title": "${nextLabel.title}",
+      "tooltip": "${nextLabel.description}",
+      "required": true
+    },
+    {
+      "type": "textbox",
+      "field": "prevLabel",
+      "title": "${prevLabel.title}",
+      "tooltip": "${prevLabel.description}",
+      "required": true
+    },
+    {
+      "type": "textbox",
+      "field": "skipLabel",
+      "title": "${skipLabel.title}",
+      "tooltip": "${skipLabel.description}",
+      "required": true
+    },
+    {
+      "type": "textbox",
+      "field": "doneLabel",
+      "title": "${doneLabel.title}",
+      "tooltip": "${doneLabel.description}",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "field": "steps",
+      "title": "${steps.title}",
+      "tooltip": "${steps.description}",
+      "required": true,
+      "size": {
+        "w": 300,
+        "h": 200
+      }
+    }
+  ]
+}

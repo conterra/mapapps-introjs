@@ -6,6 +6,7 @@
   "Bundle-Vendor": "con terra GmbH",
   "Product-Name": "con terra Developer Network",
   "Bundle-StartLevel": 51,
+  "Config-Bundle-Location": "/config",
   "Require-Bundle": [
   ],
   "CSS-Themes-Extension": [
@@ -26,8 +27,18 @@
         "dn_introjs.UserTutorial"
       ],
       "properties": {
-        "Event-Topics": [
-        ]
+        "showStepNumbers": false,
+        "showBullets": true,
+        "showProgress": false,
+        "showButtons": true,
+        "keyboardNavigation": true,
+        "exitOnEsc": true,
+        "exitOnOverlayClick": false,
+        "nextLabel": "${intro.next}",
+        "prevLabel": "${intro.back}",
+        "skipLabel": "${intro.skip}",
+        "doneLabel": "${intro.done}",
+        "steps": []
       },
       "references": [
         {
