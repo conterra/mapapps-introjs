@@ -15,8 +15,8 @@
  */
 define({
     root: {
-        bundleName: "Introjs",
-        bundleDescription: "Introjs Sample Bundle",
+        bundleName: "Intro.js",
+        bundleDescription: "Intro.js Bundle",
         intro: {
             familiarise: "This small introduction has the aim to familiarise you with the elements and functionality of map.apps.",
             navigation: "Click and hold the left mouse button to pan on the map.",

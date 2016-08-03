@@ -15,10 +15,10 @@
  */
 define({
     root: {
-        bundleName: "Introjs Config",
-        bundleDescription: "Configuration Bundle for the Introjs Bundle",
-        windowTitle: "Introjs Config",
-        description: "Settings for the Introjs Bundle",
+        bundleName: "Intro.js Config",
+        bundleDescription: "Configuration Bundle for the Intro.js Bundle",
+        windowTitle: "Intro.js Config",
+        description: "Settings for the Intro.js Bundle",
         showStepNumbers: {
             title: "Show steps number",
             description: "Show steps number in the red circle or not"

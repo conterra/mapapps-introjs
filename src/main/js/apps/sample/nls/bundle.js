@@ -15,7 +15,7 @@
  */
 define({
     root: {
-        apptitle: "map.apps - Introjs Sample",
+        apptitle: "map.apps - Intro.js Sample",
         custominfo: {
             imprint: {
                 title: "Imprint",

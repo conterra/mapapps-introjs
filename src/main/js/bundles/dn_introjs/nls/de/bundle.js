@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 define({
-    bundleName: "Introjs",
-    bundleDescription: "Introjs Sample Bundle",
+    bundleName: "Intro.js",
+    bundleDescription: "Intro.js Bundle",
     intro: {
         familiarise: "Diese kleine Einf\u00fchrung hat das Ziel sie mit den Elementen und Funktionalit\u00e4ten von map.apps vertraut zu machen.",
         navigation: "Klicken und halten sie die linke Maustaste, um die Karte zu verschieben.",

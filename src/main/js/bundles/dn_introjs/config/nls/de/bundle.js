@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 define({
-    bundleName: "Introjs Konfiguration",
-    bundleDescription: "Konfigurationsbundle f\u00fcr das Introjs Bundle",
-    windowTitle: "Introjs Konfiguration",
-    description: "Einstellungen f\u00fcr das Introjs Bundle",
+    bundleName: "Intro.js Konfiguration",
+    bundleDescription: "Konfigurationsbundle f\u00fcr das Intro.js Bundle",
+    windowTitle: "Intro.js Konfiguration",
+    description: "Einstellungen f\u00fcr das Intro.js Bundle",
     showStepNumbers: {
         title: "Schritt Nummern anzeigen",
         description: "Zeigt die aktuelle Schritt-Nummer in einem roten Kreis an"

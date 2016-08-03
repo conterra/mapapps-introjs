@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 define({
-    apptitle: "map.apps - Introjs Sample",
+    apptitle: "map.apps - Intro.js Sample",
     custominfo: {
         imprint: {
             title: "Impressum",
