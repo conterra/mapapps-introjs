@@ -40,7 +40,7 @@
       "properties": {
         "dataformFile": "resource('./DataForm.json')",
         "bid": "dn_introjs",
-        "pid": "dn_introjs-UserTutorial",
+        "pid": "dn_introjs-UserIntro",
         "id": "introjsBuilderWidget",
         "defaultProperties": {
           "showStepNumbers": false,

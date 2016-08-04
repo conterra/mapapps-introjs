@@ -17,8 +17,13 @@ define({
     root: {
         bundleName: "Intro.js",
         bundleDescription: "Intro.js Bundle",
+        windowTitle: "Welcome to map.apps!",
+        toolName: "Intro Tool",
+        toolTooltip: "Intro Tool",
+        start: "Start Intro",
+        hint: "Don't show the intro again on next start-up",
         intro: {
-            familiarise: "This small introduction has the aim to familiarise you with the elements and functionality of map.apps.",
+            familiarise: "This introduction has the aim to familiarise you with the elements and functionality of map.apps.",
             navigation: "Click and hold the left mouse button to pan on the map.",
             mapview: "These buttons allow you to control the mapview.",
             basemap: "You can change the basemap by selecting an entry of this dropdown list.",

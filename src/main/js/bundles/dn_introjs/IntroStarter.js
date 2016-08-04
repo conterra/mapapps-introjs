@@ -14,9 +14,21 @@
  * limitations under the License.
  */
 define([
-    ".",
-    "./IntroStarter",
-    "./IntroWidget",
-    "./IntroWidgetFactory",
-    "./UserIntro"
-], {});
+    "dojo/_base/declare",
+    "dojo/cookie"
+], function (declare,
+             d_cookie) {
+    return declare([], {
+        activate: function () {
+            this.inherited(arguments);
+            var cookieKey = "ShowIntroduction";
+            var value = d_cookie(cookieKey);
+            if (value === "false") {
+                // do nothing
+            } else {
+                this._tool.set("active", true);
+            }
+        }
+    });
+});
+		

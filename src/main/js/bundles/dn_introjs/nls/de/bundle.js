@@ -16,8 +16,13 @@
 define({
     bundleName: "Intro.js",
     bundleDescription: "Intro.js Bundle",
+    windowTitle: "Willkommen in map.apps!",
+    toolName: "Intro Tool",
+    toolTooltip: "Intro Tool",
+    start: "Einf\u00fchrung starten",
+    hint: "Beim n\u00e4chsten Start nicht mehr anzeigen",
     intro: {
-        familiarise: "Diese kleine Einf\u00fchrung hat das Ziel Sie mit den Elementen und Funktionalit\u00e4ten von map.apps vertraut zu machen.",
+        familiarise: "Diese Einf\u00fchrung dient dazu Sie mit den Elementen und Funktionalit\u00e4ten von map.apps vertraut zu machen.",
         navigation: "Klicken und halten Sie die linke Maustaste, um die Karte zu verschieben.",
         mapview: "Mit diesen Tasten kontrollieren Sie die Kartenansicht.",
         basemap: "Mit Hilfe der Dropdown-Liste k\u00f6nnen Sie die Hintergrundkarte wechseln.",

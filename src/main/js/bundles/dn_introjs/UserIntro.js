@@ -28,7 +28,7 @@ define([
         overlayCount: 0,
         activate: function () {
             ct_async(function () {
-                this.startIntro();
+                //this.startIntro();
             }, this, 1000);
         },
         startIntro: function () {
@@ -36,7 +36,8 @@ define([
             var properties = this._properties;
             var steps = properties.steps;
             d_array.forEach(steps, function (step) {
-                step.element = document.querySelector(step.element);
+                if (step.element && typeof step.element !== "object")
+                    step.element = document.querySelector(step.element);
             });
             intro.setOptions({
                 showStepNumbers: properties.showStepNumbers,

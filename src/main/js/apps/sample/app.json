@@ -73,7 +73,7 @@
   },
   "bundles": {
     "dn_introjs": {
-      "UserTutorial": {
+      "UserIntro": {
         "showStepNumbers": false,
         "showBullets": true,
         "showProgress": false,
@@ -115,7 +115,7 @@
           {
             "element": ".omnisearch",
             "intro": "${intro.omnisearch}",
-            "position": "bottom"
+            "position": "right"
           },
           {
             "element": ".ctWDYWBtn",
@@ -884,6 +884,11 @@
       }
     },
     "toolrules": {
+      "ToolActiveStateManager": {
+        "activateOnStartToolIds": [
+          //"introTool"
+        ]
+      },
       "ToolRuleManager": {
         "_rules": {
           "agsprinttool": {

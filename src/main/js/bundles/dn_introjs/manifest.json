@@ -13,18 +13,84 @@
     {
       "name": "*",
       "files": [
+        "./styles/intro.css",
         "./styles/introjs.css"
       ]
     }
   ],
+  "layout-widgets": [
+    {
+      "role": "introWidget",
+      "window": {
+        "title": "${windowTitle}",
+        "marginBox": {
+          "w": 260,
+          "h": 140
+        },
+        "dockTool": "introTool",
+        "closable": true,
+        "minimizeOnClose": true,
+        "resizable": false
+      }
+    }
+  ],
   "Components": [
     {
-      "name": "UserTutorial",
+      "name": "IntroStarter",
+      "references": [
+        {
+          "name": "_tool",
+          "providing": "ct.tools.Tool",
+          "filter": "(id=introTool)"
+        }
+      ]
+    },
+    {
+      "name": "IntroWidgetFactory",
+      "provides": [
+        "dijit.Widget",
+        "ct.framework.api.EventHandler"
+      ],
+      "properties": {
+        "widgetRole": "introWidget"
+      },
+      "instanceFactory": true,
+      "immediate": true,
+      "references": [
+        {
+          "name": "_userIntro",
+          "providing": "dn_introjs.UserIntro"
+        },
+        {
+          "name": "_tool",
+          "providing": "ct.tools.Tool",
+          "filter": "(id=introTool)"
+        }
+      ]
+    },
+    {
+      "name": "${toolName}",
+      "impl": "ct/tools/Tool",
+      "provides": [
+        "ct.tools.Tool"
+      ],
+      "propertiesConstructor": true,
+      "properties": {
+        "id": "introTool",
+        "toolRole": "toolset",
+        "title": "${toolName}",
+        "tooltip": "${toolTooltip}",
+        "togglable": true,
+        "iconClass": "icon-add-symbol"
+      }
+    },
+    {
+      "name": "UserIntro",
       "propertiesConstructor": true,
       "immediate": true,
       "provides": [
         "ct.framework.api.EventHandler",
-        "dn_introjs.UserTutorial"
+        "dn_introjs.UserIntro"
       ],
       "properties": {
         "showStepNumbers": false,
