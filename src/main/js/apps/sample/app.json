@@ -886,7 +886,6 @@
     "toolrules": {
       "ToolActiveStateManager": {
         "activateOnStartToolIds": [
-          //"introTool"
         ]
       },
       "ToolRuleManager": {
