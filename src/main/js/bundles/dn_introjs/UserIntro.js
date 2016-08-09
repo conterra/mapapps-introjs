@@ -48,8 +48,8 @@ define([
                 exitOnEsc: properties.exitOnEsc,
                 exitOnOverlayClick: properties.exitOnOverlayClick,
                 disableInteraction: properties.disableInteraction,
-                nextLabel: properties.nextLabel + " &rarr;",
-                prevLabel: "&larr; " + properties.prevLabel,
+                nextLabel: properties.nextLabel + "<span class='icon-arrow-right'></span>",
+                prevLabel: "<span class='icon-arrow-left'></span>" + properties.prevLabel,
                 skipLabel: properties.skipLabel,
                 doneLabel: properties.doneLabel,
                 steps: properties.steps

@@ -474,7 +474,9 @@ a.introjs-button {
     background-color: #2aaef5;
 }
 
-.everlasting .introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+.everlasting .introjs-disabled,
+.everlasting .introjs-disabled:hover,
+.everlasting .introjs-disabled:focus {
     background-color: #8d8d8d;
 }
 
@@ -516,7 +518,9 @@ a.introjs-button {
     background-color: #30BA9F;
 }
 
-.spring .introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+.spring .introjs-disabled,
+.spring .introjs-disabled:hover,
+.spring .introjs-disabled:focus {
     background-color: #C0C0C0;
 }
 
@@ -537,7 +541,9 @@ a.introjs-button {
     background-color: #A62934;
 }
 
-.summer .introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+.summer .introjs-disabled,
+.summer .introjs-disabled:hover,
+.summer .introjs-disabled:focus {
     background-color: #C0C0C0;
 }
 
@@ -558,7 +564,9 @@ a.introjs-button {
     background-color: #565656;
 }
 
-.winter .introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+.winter .introjs-disabled,
+.winter .introjs-disabled:hover,
+.winter .introjs-disabled:focus {
     background-color: #C0C0C0;
 }
 
