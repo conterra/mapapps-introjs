@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.devnet</groupId>
     <artifactId>ct-mapapps-introjs</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHoT</version>
     <packaging>jar</packaging>
     <!-- DISABLE repositories and pluginRepositories if inside the con terra! -->
     <repositories>
@@ -466,7 +466,7 @@
         <!-- dojo custom build parameters -->
         <js.build.outputPath>${project.build.directory}/${project.artifactId}/js</js.build.outputPath>
         <!-- mapapps.version -->
-        <mapapps.version>3.5.2</mapapps.version>
+        <mapapps.version>3.6.0</mapapps.version>
         <!-- java lib versions -->
         <ct.jsregistry.version>1.0.13</ct.jsregistry.version>
         <ct.jsrt-test.version>1.0.6</ct.jsrt-test.version>
