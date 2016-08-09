@@ -1,5 +1,7 @@
 # mapapps-introjs
 
+This bundle allows you to create your own step-by-step guide in map.apps.
+
 ### Sample App ###
 http://www.mapapps.de/mapapps/resources/apps/downloads_introjs/index.html
 
