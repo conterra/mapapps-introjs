@@ -39,13 +39,13 @@ Installation Guide
         "skipLabel": "${intro.skip}",               // Skip button label
         "doneLabel": "${intro.done}",               // Done button label
         "steps": [                                  // Step definition
-           {
+            {
                 "intro": "${intro.familiarise}"
             },
             {
-                "element": ".mapview_tools",
-                "intro": "${intro.mapview}",
-                "position": "left"
+                "element": ".mapview_tools",        // CSS class
+                "intro": "${intro.mapview}",        // Tooltip text
+                "position": "left"                  // Tooltip position
             },
             {
                 "element": ".basemapToggler",
