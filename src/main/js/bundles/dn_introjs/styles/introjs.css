@@ -213,10 +213,11 @@ tr.introjs-showElement > th {
 .introjs-tooltip {
     position: absolute;
     visibility: visible;
-    padding: 10px;
+    padding: 15px;
     background-color: grey;
     min-width: 200px;
     max-width: 300px;
+    border: 1px solid #12a5f4;
     /*border-radius: 3px;*/
     box-shadow: 0 1px 10px rgba(0, 0, 0, .4);
     -webkit-transition: opacity 0.1s ease-out;
@@ -239,7 +240,7 @@ tr.introjs-showElement > th {
     position: relative;
     overflow: visible;
     display: inline-block;
-    padding: 0.5em 1.5em;
+    padding: 2px 12px 4px;
     /*border: 1px solid #d4d4d4;*/
     margin: 0;
     text-decoration: none;
@@ -323,6 +324,7 @@ a.introjs-button {
 }
 
 .introjs-bullets {
+    margin: 10px;
     text-align: center;
 }
 
@@ -341,8 +343,8 @@ a.introjs-button {
 
 .introjs-bullets ul li a {
     display: block;
-    width: 6px;
-    height: 6px;
+    width: 12px;
+    height: 12px;
     background: #ccc;
     border-radius: 10px;
     -moz-border-radius: 10px;
@@ -458,8 +460,8 @@ a.introjs-button {
 }
 
 .everlasting .introjs-helperLayer {
-    background: #f46112;
-    background: rgba(244, 97, 18, .7);
+    background: #12A5F4;
+    background: rgba(18, 165, 244, .7);
 }
 
 .everlasting .introjs-tooltip {
@@ -474,10 +476,50 @@ a.introjs-button {
     background-color: #2aaef5;
 }
 
+.everlasting .introjs-prevbutton {
+    background-color: #8d8d8d;
+}
+
 .everlasting .introjs-disabled,
 .everlasting .introjs-disabled:hover,
 .everlasting .introjs-disabled:focus {
     background-color: #8d8d8d;
+}
+
+.everlasting .introjs-bullets ul li a.active {
+    background: #12A5F4;
+}
+
+.everlasting .introjs-arrow.top {
+    border-bottom-color: #12A5F4;
+}
+
+.everlasting .introjs-arrow.top-right {
+    border-bottom-color: #12A5F4;
+}
+
+.everlasting .introjs-arrow.top-middle {
+    border-bottom-color: #12A5F4;
+}
+
+.everlasting .introjs-arrow.right {
+    border-left-color: #12A5F4;
+}
+
+.everlasting .introjs-arrow.right-bottom {
+    border-left-color: #12A5F4;
+}
+
+.everlasting .introjs-arrow.bottom {
+    border-top-color: #12A5F4;
+}
+
+.everlasting .introjs-arrow.left {
+    border-right-color: #12A5F4;
+}
+
+.everlasting .introjs-arrow.left-bottom {
+    border-right-color: #12A5F4;
 }
 
 .autumn .introjs-helperLayer {
@@ -497,8 +539,46 @@ a.introjs-button {
     background-color: #439AD3;
 }
 
-.autumn .introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+.autumn .introjs-disabled,
+.autumn .introjs-disabled:hover,
+.autumn .introjs-disabled:focus {
     background-color: #C0C0C0;
+}
+
+.autumn .introjs-bullets ul li a.active {
+    background: #2980B9;
+}
+
+.autumn .introjs-arrow.top {
+    border-bottom-color: #2980B9;
+}
+
+.autumn .introjs-arrow.top-right {
+    border-bottom-color: #2980B9;
+}
+
+.autumn .introjs-arrow.top-middle {
+    border-bottom-color: #2980B9;
+}
+
+.autumn .introjs-arrow.right {
+    border-left-color: #2980B9;
+}
+
+.autumn .introjs-arrow.right-bottom {
+    border-left-color: #2980B9;
+}
+
+.autumn .introjs-arrow.bottom {
+    border-top-color: #2980B9;
+}
+
+.autumn .introjs-arrow.left {
+    border-right-color: #2980B9;
+}
+
+.autumn .introjs-arrow.left-bottom {
+    border-right-color: #2980B9;
 }
 
 .spring .introjs-helperLayer {
@@ -524,6 +604,42 @@ a.introjs-button {
     background-color: #C0C0C0;
 }
 
+.spring .introjs-bullets ul li a.active {
+    background: #16A085;
+}
+
+.spring .introjs-arrow.top {
+    border-bottom-color: #16A085;
+}
+
+.spring .introjs-arrow.top-right {
+    border-bottom-color: #16A085;
+}
+
+.spring .introjs-arrow.top-middle {
+    border-bottom-color: #16A085;
+}
+
+.spring .introjs-arrow.right {
+    border-left-color: #16A085;
+}
+
+.spring .introjs-arrow.right-bottom {
+    border-left-color: #16A085;
+}
+
+.spring .introjs-arrow.bottom {
+    border-top-color: #16A085;
+}
+
+.spring .introjs-arrow.left {
+    border-right-color: #16A085;
+}
+
+.spring .introjs-arrow.left-bottom {
+    border-right-color: #16A085;
+}
+
 .summer .introjs-helperLayer {
     background: #0f8c81;
     background: rgba(15, 140, 129, .7);
@@ -547,6 +663,42 @@ a.introjs-button {
     background-color: #C0C0C0;
 }
 
+.summer .introjs-bullets ul li a.active {
+    background: #8C0F1A;
+}
+
+.summer .introjs-arrow.top {
+    border-bottom-color: #8C0F1A;
+}
+
+.summer .introjs-arrow.top-right {
+    border-bottom-color: #8C0F1A;
+}
+
+.summer .introjs-arrow.top-middle {
+    border-bottom-color: #8C0F1A;
+}
+
+.summer .introjs-arrow.right {
+    border-left-color: #8C0F1A;
+}
+
+.summer .introjs-arrow.right-bottom {
+    border-left-color: #8C0F1A;
+}
+
+.summer .introjs-arrow.bottom {
+    border-top-color: #8C0F1A;
+}
+
+.summer .introjs-arrow.left {
+    border-right-color: #8C0F1A;
+}
+
+.summer .introjs-arrow.left-bottom {
+    border-right-color: #8C0F1A;
+}
+
 .winter .introjs-helperLayer {
     background: #dd0055;
     background: rgba(221, 0, 85, .7);
@@ -568,6 +720,42 @@ a.introjs-button {
 .winter .introjs-disabled:hover,
 .winter .introjs-disabled:focus {
     background-color: #C0C0C0;
+}
+
+.winter .introjs-bullets ul li a.active {
+    background: #3C3C3C;
+}
+
+.winter .introjs-arrow.top {
+    border-bottom-color: #3C3C3C;
+}
+
+.winter .introjs-arrow.top-right {
+    border-bottom-color: #3C3C3C;
+}
+
+.winter .introjs-arrow.top-middle {
+    border-bottom-color: #3C3C3C;
+}
+
+.winter .introjs-arrow.right {
+    border-left-color: #3C3C3C;
+}
+
+.winter .introjs-arrow.right-bottom {
+    border-left-color: #3C3C3C;
+}
+
+.winter .introjs-arrow.bottom {
+    border-top-color: #3C3C3C;
+}
+
+.winter .introjs-arrow.left {
+    border-right-color: #3C3C3C;
+}
+
+.winter .introjs-arrow.left-bottom {
+    border-right-color: #3C3C3C;
 }
 
 .introjs-tooltiptext {
