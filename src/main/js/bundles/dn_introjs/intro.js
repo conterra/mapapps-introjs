@@ -865,7 +865,7 @@
 
                 if (i === (targetElement.step-1)) anchorLink.className = 'active';
 
-                anchorLink.href = 'javascript:void(0);';
+                //anchorLink.href = 'javascript:void(0);';
                 anchorLink.innerHTML = "&nbsp;";
                 anchorLink.setAttribute('data-stepnumber', this._introItems[i].step);
 
@@ -916,7 +916,7 @@
                 }
             };
 
-            nextTooltipButton.href = 'javascript:void(0);';
+            //nextTooltipButton.href = 'javascript:void(0);';
             nextTooltipButton.innerHTML = this._options.nextLabel;
 
             //previous button
@@ -928,13 +928,13 @@
                 }
             };
 
-            prevTooltipButton.href = 'javascript:void(0);';
+            //prevTooltipButton.href = 'javascript:void(0);';
             prevTooltipButton.innerHTML = this._options.prevLabel;
 
             //skip button
             var skipTooltipButton = document.createElement('a');
             skipTooltipButton.className = 'introjs-button introjs-skipbutton';
-            skipTooltipButton.href = 'javascript:void(0);';
+            //skipTooltipButton.href = 'javascript:void(0);';
             skipTooltipButton.innerHTML = this._options.skipLabel;
 
             skipTooltipButton.onclick = function() {
