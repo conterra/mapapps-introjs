@@ -150,7 +150,7 @@ define({
         featureinfo: "Durch Klick in die Karte k\u00f6nnen Sie weitere Informationen abfragen.",
         followme: "Hier k\u00f6nnen Sie mit anderen Nutzern zusammenarbeiten.",
         gallery: "In der Gallerie können Sie andere Karten ausw\u00e4hlen.",
-        routing: "Hier können Sie zwischen zwei Punkten routen.",
+        routing: "Hier können Sie eine Route berechnen.",
         okButton: "Ok",
         closeButton: "Schliessen",
         mapScaling: "mapScaling",

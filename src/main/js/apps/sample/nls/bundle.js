@@ -151,7 +151,7 @@ define({
             featureinfo: "Click on the map to query additional information.",
             followme: "Here you are able to work toghether with other user.",
             gallery: "Choose another map contentin the gallery.",
-            routing: "Here you can calculate a route between two points.",
+            routing: "Here you can calculate a route.",
             okButton: "Ok",
             closeButton: "Close",
             mapScaling: "mapScaling",

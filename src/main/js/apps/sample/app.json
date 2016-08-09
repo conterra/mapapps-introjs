@@ -873,7 +873,7 @@
     },
     "themes": {
       "ThemeModel": {
-        "_selectedTheme": "winter",
+        "_selectedTheme": "everlasting",
         "_themes": [
           {
             "name": "everlasting"
