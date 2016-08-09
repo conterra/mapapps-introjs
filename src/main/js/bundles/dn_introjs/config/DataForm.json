@@ -53,6 +53,13 @@
       "required": true
     },
     {
+      "type": "checkbox",
+      "field": "disableInteraction",
+      "title": "${disableInteraction.title}",
+      "tooltip": "${disableInteraction.description}",
+      "required": true
+    },
+    {
       "type": "textbox",
       "field": "nextLabel",
       "title": "${nextLabel.title}",

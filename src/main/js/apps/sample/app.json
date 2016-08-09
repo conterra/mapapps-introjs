@@ -81,6 +81,7 @@
         "keyboardNavigation": true,
         "exitOnEsc": true,
         "exitOnOverlayClick": false,
+        "disableInteraction": false,
         "nextLabel": "${intro.next}",
         "prevLabel": "${intro.back}",
         "skipLabel": "${intro.skip}",
@@ -110,7 +111,7 @@
           {
             "element": ".languageToggler",
             "intro": "${intro.language}",
-            "position": "bottom"
+            "position": "left"
           },
           {
             "element": ".omnisearch",

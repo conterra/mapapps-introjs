@@ -136,5 +136,27 @@ define({
         title: "Titel",
         adapter: "Dienst",
         type: "Typ"
+    },
+    intro: {
+        familiarise: "Diese Einf\u00fchrung dient dazu Sie mit den Elementen und Funktionalit\u00e4ten von map.apps vertraut zu machen.",
+        navigation: "Klicken und halten Sie die linke Maustaste, um die Karte zu verschieben.",
+        mapview: "Mit diesen Tasten kontrollieren Sie die Kartenansicht.",
+        basemap: "Mit Hilfe der Dropdown-Liste k\u00f6nnen Sie die Hintergrundkarte wechseln.",
+        theme: "Hier k\u00f6nnen Sie das aktuelle Farbschema wechseln.",
+        language: "Eine andere Sprache k\u00f6nnen Sie hier ausw\u00e4hlen.",
+        functions: "Zus\u00e4tzliche Funktionalit\u00e4t wird durch die Tasten in dieser Dropdown-Liste zur Verf\u00fcgung gestellt. Sie fungieren als Schalter und aktivieren oder deaktivieren die angegebene Funktionalit\u00e4t.",
+        mapflow: "Hier k\u00f6nnen Sie die dargestellten Inhalte der Karte beeinflussen.",
+        legend: "Verwenden Sie die Legende, um die Symbolisierung der aktuell angezeigten Layer zu sehen.",
+        omnisearch: "Suchen Sie mir Hilfe der Omnisearch nach Adressen und Orten.",
+        featureinfo: "Einige Daten k\u00f6nnen n\u00e4her untersucht werden. Klicken Sie dazu auf die Karte, um weitere Informationen abzufragen.",
+        donotshow: "Soll der Willkommensbildschirm erneut angezeigt werden.",
+        okButton: "Ok",
+        closeButton: "Schliessen",
+        mapScaling: "mapScaling",
+        mapLoading: "mapLoading",
+        next: "Weiter",
+        back: "Zur\u00fcck",
+        skip: "\u00dcberspringen",
+        done: "Beenden"
     }
 });

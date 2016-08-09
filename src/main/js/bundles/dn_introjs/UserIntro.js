@@ -47,6 +47,7 @@ define([
                 keyboardNavigation: properties.keyboardNavigation,
                 exitOnEsc: properties.exitOnEsc,
                 exitOnOverlayClick: properties.exitOnOverlayClick,
+                disableInteraction: properties.disableInteraction,
                 nextLabel: properties.nextLabel + " &rarr;",
                 prevLabel: "&larr; " + properties.prevLabel,
                 skipLabel: properties.skipLabel,

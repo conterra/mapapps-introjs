@@ -47,6 +47,10 @@ define({
             title: "Exit on overlay click",
             description: "Exit introduction when clicking on overlay layer"
         },
+        disableInteraction: {
+            title: "Disable interaction",
+            description: "Disable an interaction inside element or not"
+        },
         nextLabel: {
             title: "Next button label",
             description: "Next button label"

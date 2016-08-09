@@ -137,6 +137,28 @@ define({
             title: "Title",
             adapter: "Service",
             type: "Type"
+        },
+        intro: {
+            familiarise: "This introduction has the aim to familiarise you with the elements and functionality of map.apps.",
+            navigation: "Click and hold the left mouse button to pan on the map.",
+            mapview: "These buttons allow you to control the mapview.",
+            basemap: "You can change the basemap by selecting an entry of this dropdown list.",
+            theme: "Change the map.apps theme.",
+            language: "Choose another language.",
+            functions: "Additional functionality is available through the buttons in this dropdown list. They act as toggles and enable or disable the given functionality.",
+            mapflow: "This button opens the mapflow. It allows you to change the map content.",
+            legend: "Use the Legend widget to show a legend that displays some or all of the layers in the map.",
+            omnisearch: "Search for places in the omnisearch",
+            featureinfo: "Some data can be examined even in more detail. Click on the map to query additional information.",
+            donotshow: "Do not display this welcome screen again.",
+            okButton: "Ok",
+            closeButton: "Close",
+            mapScaling: "mapScaling",
+            mapLoading: "mapLoading",
+            next: "next",
+            back: "back",
+            skip: "skip",
+            done: "done"
         }
     },
     "de": true

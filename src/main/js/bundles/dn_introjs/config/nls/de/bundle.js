@@ -46,6 +46,10 @@ define({
         title: "Beenden bei Klick auf das Overlay",
         description: "Beendet die Einf\u00fchrung beim Klick auf das Overlay"
     },
+    disableInteraction: {
+        title: "Interaktion deaktivieren",
+        description: "Interaktion innerhalb eines Elementes deaktivieren"
+    },
     nextLabel: {
         title: "Weiter-Beschriftung",
         description: "Fertig-Beschriftung"
