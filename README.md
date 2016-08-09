@@ -39,11 +39,8 @@ Installation Guide
         "skipLabel": "${intro.skip}",               // Skip button label
         "doneLabel": "${intro.done}",               // Done button label
         "steps": [                                  // Step definition
-            {
+           {
                 "intro": "${intro.familiarise}"
-            },
-            {
-                "intro": "${intro.navigation}"
             },
             {
                 "element": ".mapview_tools",
@@ -51,19 +48,9 @@ Installation Guide
                 "position": "left"
             },
             {
-                "element": ".themeSelector",
-                "intro": "${intro.theme}",
-                "position": "bottom"
-            },
-            {
                 "element": ".basemapToggler",
                 "intro": "${intro.basemap}",
                 "position": "bottom"
-            },
-            {
-                "element": ".languageToggler",
-                "intro": "${intro.language}",
-                "position": "left"
             },
             {
                 "element": ".omnisearch",
@@ -76,14 +63,39 @@ Installation Guide
                 "position": "right"
             },
             {
+                "element": ".ctTool_basemapgalleryToggleTool",
+                "intro": "${intro.gallery}",
+                "position": "top"
+            },
+            {
+                "element": ".ctTool_followmeToggleTool",
+                "intro": "${intro.followme}",
+                "position": "top"
+            },
+            {
                 "element": ".ctTool_mapflowToggleTool",
                 "intro": "${intro.mapflow}",
+                "position": "top"
+            },
+            {
+                "element": ".ctTool_routingToggleTool",
+                "intro": "${intro.routing}",
                 "position": "top"
             },
             {
                 "element": ".ctTool_legendToggleTool",
                 "intro": "${intro.legend}",
                 "position": "top"
+            },
+            {
+                "element": ".themeSelector",
+                "intro": "${intro.theme}",
+                "position": "bottom"
+            },
+            {
+                "element": ".languageToggler",
+                "intro": "${intro.language}",
+                "position": "left"
             },
             {
                 "intro": "${intro.featureinfo}"

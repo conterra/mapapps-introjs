@@ -91,27 +91,14 @@
             "intro": "${intro.familiarise}"
           },
           {
-            "intro": "${intro.navigation}"
-          },
-          {
             "element": ".mapview_tools",
             "intro": "${intro.mapview}",
             "position": "left"
           },
           {
-            "element": ".themeSelector",
-            "intro": "${intro.theme}",
-            "position": "bottom"
-          },
-          {
             "element": ".basemapToggler",
             "intro": "${intro.basemap}",
             "position": "bottom"
-          },
-          {
-            "element": ".languageToggler",
-            "intro": "${intro.language}",
-            "position": "left"
           },
           {
             "element": ".omnisearch",
@@ -124,14 +111,39 @@
             "position": "right"
           },
           {
+            "element": ".ctTool_basemapgalleryToggleTool",
+            "intro": "${intro.gallery}",
+            "position": "top"
+          },
+          {
+            "element": ".ctTool_followmeToggleTool",
+            "intro": "${intro.followme}",
+            "position": "top"
+          },
+          {
             "element": ".ctTool_mapflowToggleTool",
             "intro": "${intro.mapflow}",
+            "position": "top"
+          },
+          {
+            "element": ".ctTool_routingToggleTool",
+            "intro": "${intro.routing}",
             "position": "top"
           },
           {
             "element": ".ctTool_legendToggleTool",
             "intro": "${intro.legend}",
             "position": "top"
+          },
+          {
+            "element": ".themeSelector",
+            "intro": "${intro.theme}",
+            "position": "bottom"
+          },
+          {
+            "element": ".languageToggler",
+            "intro": "${intro.language}",
+            "position": "left"
           },
           {
             "intro": "${intro.featureinfo}"
@@ -861,7 +873,7 @@
     },
     "themes": {
       "ThemeModel": {
-        "_selectedTheme": "everlasting",
+        "_selectedTheme": "winter",
         "_themes": [
           {
             "name": "everlasting"
