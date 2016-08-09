@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 (function (root, factory) {
+    /**
+     * Intro.js v1.1.1
+     * https://github.com/usablica/intro.js
+     * MIT licensed
+     *
+     * Copyright (C) 2012-2016 Afshin Mehrabani (afshin.meh@gmail.com)
+     */
     if (typeof exports === 'object') {
         // CommonJS
         factory(exports);
