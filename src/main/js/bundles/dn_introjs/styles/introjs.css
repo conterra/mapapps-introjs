@@ -215,9 +215,8 @@ tr.introjs-showElement > th {
     visibility: visible;
     padding: 15px;
     background-color: grey;
-    min-width: 200px;
+    min-width: 250px;
     max-width: 300px;
-    border: 1px solid #12a5f4;
     /*border-radius: 3px;*/
     box-shadow: 0 1px 10px rgba(0, 0, 0, .4);
     -webkit-transition: opacity 0.1s ease-out;
@@ -228,7 +227,7 @@ tr.introjs-showElement > th {
 }
 
 .introjs-tooltipbuttons {
-    text-align: right;
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -466,6 +465,7 @@ a.introjs-button {
 
 .everlasting .introjs-tooltip {
     background-color: #48484B;
+    border: 1px solid #12A5f4;
 }
 
 .everlasting .introjs-button {
@@ -523,12 +523,13 @@ a.introjs-button {
 }
 
 .autumn .introjs-helperLayer {
-    background: #b96229;
-    background: rgba(185, 98, 41, .7);
+    background: #2980B9;
+    background: rgba(41, 128, 185, .7);
 }
 
 .autumn .introjs-tooltip {
     background-color: #F3F3F3;
+    border: 1px solid #2980B9;
 }
 
 .autumn .introjs-button {
@@ -582,12 +583,13 @@ a.introjs-button {
 }
 
 .spring .introjs-helperLayer {
-    background: #a01631;
-    background: rgba(160, 22, 49, .7);
+    background: #16A085;
+    background: rgba(22, 160, 133, .7);
 }
 
 .spring .introjs-tooltip {
     background-color: #F3F3F3;
+    border: 1px solid #16A085;
 }
 
 .spring .introjs-button {
@@ -641,12 +643,13 @@ a.introjs-button {
 }
 
 .summer .introjs-helperLayer {
-    background: #0f8c81;
-    background: rgba(15, 140, 129, .7);
+    background: #8C0F1A;
+    background: rgba(140, 15, 26, .7);
 }
 
 .summer .introjs-tooltip {
     background-color: #F3F3F3;
+    border: 1px solid #8C0F1A;
 }
 
 .summer .introjs-button {
@@ -706,6 +709,7 @@ a.introjs-button {
 
 .winter .introjs-tooltip {
     background-color: #F3F3F3;
+    border: 1px solid #dd0055;
 }
 
 .winter .introjs-button {
@@ -723,39 +727,39 @@ a.introjs-button {
 }
 
 .winter .introjs-bullets ul li a.active {
-    background: #3C3C3C;
+    background: #dd0055;
 }
 
 .winter .introjs-arrow.top {
-    border-bottom-color: #3C3C3C;
+    border-bottom-color: #dd0055;
 }
 
 .winter .introjs-arrow.top-right {
-    border-bottom-color: #3C3C3C;
+    border-bottom-color: #dd0055;
 }
 
 .winter .introjs-arrow.top-middle {
-    border-bottom-color: #3C3C3C;
+    border-bottom-color: #dd0055;
 }
 
 .winter .introjs-arrow.right {
-    border-left-color: #3C3C3C;
+    border-left-color: #dd0055;
 }
 
 .winter .introjs-arrow.right-bottom {
-    border-left-color: #3C3C3C;
+    border-left-color: #dd0055;
 }
 
 .winter .introjs-arrow.bottom {
-    border-top-color: #3C3C3C;
+    border-top-color: #dd0055;
 }
 
 .winter .introjs-arrow.left {
-    border-right-color: #3C3C3C;
+    border-right-color: #dd0055;
 }
 
 .winter .introjs-arrow.left-bottom {
-    border-right-color: #3C3C3C;
+    border-right-color: #dd0055;
 }
 
 .introjs-tooltiptext {
