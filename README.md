@@ -38,7 +38,7 @@ Installation Guide
         "prevLabel": "${intro.back}",               // Previous button label
         "skipLabel": "${intro.skip}",               // Skip button label
         "doneLabel": "${intro.done}",               // Done button label
-        "steps": [                                  // step definition
+        "steps": [                                  // Step definition
             {
                 "intro": "${intro.familiarise}"
             },
