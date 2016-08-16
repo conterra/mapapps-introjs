@@ -26,6 +26,7 @@ Installation Guide
 ```
 "dn_introjs": {
     "UserIntro": {
+        "startIntroOnStartup": true,                // Enable / Disable intro-start on startup
         "showStepNumbers": false,                   // Show steps number in the red circle or not
         "showBullets": true,                        // Show introduction bullets or not
         "showProgress": false,                      // Show introduction progress or not
@@ -102,5 +103,5 @@ Installation Guide
             }
         ]
     }
-},
+}
 ```
