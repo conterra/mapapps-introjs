@@ -184,7 +184,7 @@
         "image": "resource('${app}:/images/logo_conterra.png')",
         "imagePosition": "above",
         "imageWidth": 120,
-        "link": "http://www.conterra.de"
+        "link": "http://developernetwork.conterra.de"
       }
     },
     "basemapgallery": {
