@@ -1,6 +1,6 @@
 {
   "Bundle-SymbolicName": "dn_introjs",
-  "Bundle-Version": "1.0.1-SNAPSHOT",
+  "Bundle-Version": "1.0.1",
   "Bundle-Name": "${bundleName}",
   "Bundle-Description": "${bundleDescription}",
   "Bundle-Vendor": "con terra GmbH",
@@ -42,6 +42,10 @@
           "name": "_tool",
           "providing": "ct.tools.Tool",
           "filter": "(id=introTool)"
+        },
+        {
+          "name":"_userIntro",
+          "providing": "dn_introjs.UserIntro"
         }
       ]
     },
@@ -93,6 +97,7 @@
         "dn_introjs.UserIntro"
       ],
       "properties": {
+        "startIntroOnStartup": true,
         "showStepNumbers": false,
         "showBullets": true,
         "showProgress": false,

@@ -5,6 +5,13 @@
   "children": [
     {
       "type": "checkbox",
+      "field": "startIntroOnStartup",
+      "title": "${startIntroOnStartup.title}",
+      "tooltip": "${startIntroOnStartup.description}",
+      "required": true
+    },
+    {
+      "type": "checkbox",
       "field": "showStepNumbers",
       "title": "${showStepNumbers.title}",
       "tooltip": "${showStepNumbers.description}",

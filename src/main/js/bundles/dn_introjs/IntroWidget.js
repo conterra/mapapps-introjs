@@ -23,6 +23,7 @@ define([
     "dijit/layout/ContentPane",
     "dijit/form/Button",
     "dijit/form/CheckBox",
+    "ct/util/css",
     "ct/_Connect"
 ], function (declare,
              _Widget,
@@ -33,6 +34,7 @@ define([
              ContentPane,
              Button,
              CheckBox,
+             ct_css,
              _Connect) {
     return declare([_Widget, _TemplatedMixin,
         _WidgetsInTemplateMixin, _Connect], {
@@ -40,6 +42,8 @@ define([
         baseClass: "introWidget",
         postCreate: function () {
             this.inherited(arguments);
+            if (!this.startIntroOnStartup)
+                ct_css.switchHidden(this._bottomContainer, true);
         },
         resize: function (dims) {
             this._container.resize(dims);

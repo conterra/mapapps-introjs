@@ -18,6 +18,10 @@ define({
     bundleDescription: "Konfigurationsbundle f\u00fcr das Intro.js Bundle",
     windowTitle: "Intro.js Konfiguration",
     description: "Einstellungen f\u00fcr das Intro.js Bundle",
+    startIntroOnStartup: {
+        title: "Intro beim App-Start starten",
+        description: "Intro beim App-Start starten"
+    },
     showStepNumbers: {
         title: "Schritt Nummern anzeigen",
         description: "Zeigt die aktuelle Schritt-Nummer in einem roten Kreis an"

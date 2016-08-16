@@ -19,6 +19,10 @@ define({
         bundleDescription: "Configuration Bundle for the Intro.js Bundle",
         windowTitle: "Intro.js Config",
         description: "Settings for the Intro.js Bundle",
+        startIntroOnStartup: {
+            title: "Start intro on startup",
+            description: "Start intro on startup"
+        },
         showStepNumbers: {
             title: "Show steps number",
             description: "Show steps number in the red circle or not"

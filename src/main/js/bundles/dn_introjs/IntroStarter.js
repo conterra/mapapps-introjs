@@ -21,12 +21,16 @@ define([
     return declare([], {
         activate: function () {
             this.inherited(arguments);
-            var cookieKey = "ShowIntroduction";
-            var value = d_cookie(cookieKey);
-            if (value === "false") {
-                // do nothing
-            } else {
-                this._tool.set("active", true);
+            var userIntro = this._userIntro;
+            var startIntroOnStartup = userIntro._properties.startIntroOnStartup;
+            if (startIntroOnStartup) {
+                var cookieKey = "ShowIntroduction";
+                var value = d_cookie(cookieKey);
+                if (value === "false") {
+                    // do nothing
+                } else {
+                    this._tool.set("active", true);
+                }
             }
         }
     });

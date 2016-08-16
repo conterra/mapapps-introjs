@@ -40,9 +40,13 @@ define([
         activate: function () {
             this.inherited(arguments);
             var i18n = this._i18n.get();
+            var userIntro = this._userIntro;
+            var properties = userIntro._properties;
+            var startIntroOnStartup = properties.startIntroOnStartup;
             var widget = this.widget = new IntroWidget({
                 source: this,
-                i18n: i18n
+                i18n: i18n,
+                startIntroOnStartup: startIntroOnStartup
             });
             this.connect(widget, "onStart", this.start);
             widget.resize();

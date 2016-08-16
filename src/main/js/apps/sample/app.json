@@ -74,6 +74,7 @@
   "bundles": {
     "dn_introjs": {
       "UserIntro": {
+        "startIntroOnStartup": true,
         "showStepNumbers": false,
         "showBullets": true,
         "showProgress": false,
@@ -1029,7 +1030,8 @@
               "storeListDialogToggleTool",
               "navigation_tools",
               "coordinateFinderTool",
-              "bookmarkstool"
+              "bookmarkstool",
+              "introTool"
             ],
             "container": "map",
             "position": {
