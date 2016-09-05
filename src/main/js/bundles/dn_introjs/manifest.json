@@ -120,6 +120,11 @@
         {
           "name": "_esriMap",
           "providing": "esri.Map"
+        },
+        {
+          "name": "_tools",
+          "providing": "ct.tools.Tool",
+          "cardinality": "0..n"
         }
       ]
     }

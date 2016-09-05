@@ -117,6 +117,12 @@
             "position": "top"
           },
           {
+            "element": ".ctBasemapGallery",
+            "intro": "${intro.gallery}",
+            "position": "bottom",
+            "toolId": "basemapgalleryToggleTool"
+          },
+          {
             "element": ".ctTool_followmeToggleTool",
             "intro": "${intro.followme}",
             "position": "top"
@@ -125,6 +131,12 @@
             "element": ".ctTool_mapflowToggleTool",
             "intro": "${intro.mapflow}",
             "position": "top"
+          },
+          {
+            "element": ".ctMapFlow",
+            "intro": "${intro.mapflow}",
+            "position": "top",
+            "toolId": "mapflowToggleTool"
           },
           {
             "element": ".ctTool_routingToggleTool",
@@ -144,7 +156,7 @@
           {
             "element": ".languageToggler",
             "intro": "${intro.language}",
-            "position": "left"
+            "position": "bottom"
           },
           {
             "intro": "${intro.featureinfo}"

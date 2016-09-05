@@ -21,9 +21,11 @@ define([
     "dojo/query",
     "dojo/_base/window",
     "./intro",
-    "ct/async"
-], function (declare, d_lang, d_array, domConstruct, query, win, introjs, ct_async) {
-    return declare([], {
+    "ct/_Connect",
+    "ct/async",
+    "ct/array"
+], function (declare, d_lang, d_array, domConstruct, query, win, introjs, _Connect, ct_async, ct_array) {
+    return declare([_Connect], {
         overlayUtils: null,
         overlayCount: 0,
         activate: function () {
@@ -32,12 +34,13 @@ define([
             }, this, 1000);
         },
         startIntro: function () {
-            var intro = introjs();
+            var intro = this._intro = introjs();
             var properties = this._properties;
-            var steps = properties.steps;
-            d_array.forEach(steps, function (step) {
-                if (step.element && typeof step.element !== "object")
-                    step.element = document.querySelector(step.element);
+            var steps = this._steps = [];
+            d_array.forEach(properties.steps, function (step) {
+                steps.push(step);
+                /*if (step.element && typeof step.element !== "object")
+                 step.element = document.querySelector(step.element);*/
             });
             intro.setOptions({
                 showStepNumbers: properties.showStepNumbers,
@@ -54,7 +57,35 @@ define([
                 doneLabel: properties.doneLabel,
                 steps: properties.steps
             });
+            intro.onbeforechange(d_lang.hitch(this, this.beforeStep));
+            intro.onafterchange(d_lang.hitch(this, this.afterStep));
             intro.start();
+        },
+        beforeStep: function () {
+            var activeTool = this._activeTool;
+            if (activeTool) {
+                activeTool.set("active", false);
+            }
+            var intro = this._intro;
+            var currentStep = intro._currentStep;
+            var step = intro._introItems[currentStep];
+            if (step.toolId) {
+                var tool = this._activeTool = this.getTool(step.toolId);
+                tool.set("active", true);
+            }
+            var stepElement = this._steps[currentStep];
+            if (stepElement.element && typeof stepElement.element !== "object")
+                step.element = document.querySelector(stepElement.element);
+
+
+        },
+        afterStep: function () {
+        },
+        getTool: function (toolId) {
+            var tools = this._tools;
+            return ct_array.arraySearchFirst(tools, {
+                id: toolId
+            });
         }
     });
 });
