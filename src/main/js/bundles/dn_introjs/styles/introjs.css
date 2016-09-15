@@ -522,6 +522,10 @@ a.introjs-button {
     border-right-color: #12A5F4;
 }
 
+.everlasting .introjs-progressbar {
+    background-color: #12A5F4;
+}
+
 .autumn .introjs-helperLayer {
     background: #2980B9;
     background: rgba(41, 128, 185, .7);
@@ -580,6 +584,18 @@ a.introjs-button {
 
 .autumn .introjs-arrow.left-bottom {
     border-right-color: #2980B9;
+}
+
+.autumn .introjs-progress {
+    background-color: darkgrey;
+}
+
+.autumn .introjs-progressbar {
+    background-color: #2980B9;
+}
+
+.autumn a {
+    color: white !important;
 }
 
 .spring .introjs-helperLayer {
@@ -642,6 +658,18 @@ a.introjs-button {
     border-right-color: #16A085;
 }
 
+.spring .introjs-progress {
+    background-color: darkgrey;
+}
+
+.spring .introjs-progressbar {
+    background-color: #16A085;
+}
+
+.spring a {
+    color: white !important;
+}
+
 .summer .introjs-helperLayer {
     background: #8C0F1A;
     background: rgba(140, 15, 26, .7);
@@ -702,6 +730,18 @@ a.introjs-button {
     border-right-color: #8C0F1A;
 }
 
+.summer .introjs-progress {
+    background-color: darkgrey;
+}
+
+.summer .introjs-progressbar {
+    background-color: #8C0F1A;
+}
+
+.summer a {
+    color: white !important;
+}
+
 .winter .introjs-helperLayer {
     background: #dd0055;
     background: rgba(221, 0, 85, .7);
@@ -760,6 +800,18 @@ a.introjs-button {
 
 .winter .introjs-arrow.left-bottom {
     border-right-color: #dd0055;
+}
+
+.winter .introjs-progress {
+    background-color: darkgrey;
+}
+
+.winter .introjs-progressbar {
+    background-color: #dd0055;
+}
+
+.winter a {
+    color: white !important;
 }
 
 .introjs-tooltiptext {

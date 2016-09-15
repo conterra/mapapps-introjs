@@ -76,8 +76,8 @@
       "UserIntro": {
         "startIntroOnStartup": true,
         "showStepNumbers": false,
-        "showBullets": true,
-        "showProgress": false,
+        "showBullets": false,
+        "showProgress": true,
         "showButtons": true,
         "keyboardNavigation": true,
         "exitOnEsc": true,
@@ -118,7 +118,7 @@
           },
           {
             "element": ".ctBasemapGallery",
-            "intro": "${intro.gallery}",
+            "intro": "${intro.galleryTool}",
             "position": "bottom",
             "toolId": "basemapgalleryToggleTool"
           },
@@ -134,7 +134,7 @@
           },
           {
             "element": ".ctMapFlow",
-            "intro": "${intro.mapflow}",
+            "intro": "${intro.mapflowTool}",
             "position": "top",
             "toolId": "mapflowToggleTool"
           },
