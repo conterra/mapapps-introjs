@@ -28,8 +28,8 @@ Installation Guide
     "UserIntro": {
         "startIntroOnStartup": true,                // Enable / Disable intro-start on startup
         "showStepNumbers": false,                   // Show steps number in the red circle or not
-        "showBullets": true,                        // Show introduction bullets or not
-        "showProgress": false,                      // Show introduction progress or not
+        "showBullets": false,                       // Show introduction bullets or not
+        "showProgress": true,                       // Show introduction progress or not
         "showButtons": true,                        // Show introduction navigation buttons or not
         "keyboardNavigation": true,                 // Navigating with keyboard or not
         "exitOnEsc": true,                          // Exit introduction when pressing Escape button
@@ -39,68 +39,80 @@ Installation Guide
         "prevLabel": "${intro.back}",               // Previous button label
         "skipLabel": "${intro.skip}",               // Skip button label
         "doneLabel": "${intro.done}",               // Done button label
-        "steps": [                                  // Step definition
-            {
-                "intro": "${intro.familiarise}"
-            },
-            {
-                "element": ".mapview_tools",        // CSS class
-                "intro": "${intro.mapview}",        // Tooltip text
-                "position": "left"                  // Tooltip position
-            },
-            {
-                "element": ".basemapToggler",
-                "intro": "${intro.basemap}",
-                "position": "bottom"
-            },
-            {
-                "element": ".omnisearch",
-                "intro": "${intro.omnisearch}",
-                "position": "right"
-            },
-            {
-                "element": ".ctWDYWBtn",
-                "intro": "${intro.functions}",
-                "position": "right"
-            },
-            {
-                "element": ".ctTool_basemapgalleryToggleTool",
-                "intro": "${intro.gallery}",
-                "position": "top"
-            },
-            {
-                "element": ".ctTool_followmeToggleTool",
-                "intro": "${intro.followme}",
-                "position": "top"
-            },
-            {
-                "element": ".ctTool_mapflowToggleTool",
-                "intro": "${intro.mapflow}",
-                "position": "top"
-            },
-            {
-                "element": ".ctTool_routingToggleTool",
-                "intro": "${intro.routing}",
-                "position": "top"
-            },
-            {
-                "element": ".ctTool_legendToggleTool",
-                "intro": "${intro.legend}",
-                "position": "top"
-            },
-            {
-                "element": ".themeSelector",
-                "intro": "${intro.theme}",
-                "position": "bottom"
-            },
-            {
-                "element": ".languageToggler",
-                "intro": "${intro.language}",
-                "position": "left"
-            },
-            {
-                "intro": "${intro.featureinfo}"
-            }
+        "steps": [
+          {
+            "intro": "${intro.familiarise}"
+          },
+          {
+            "element": ".mapview_tools",
+            "intro": "${intro.mapview}",
+            "position": "left"
+          },
+          {
+            "element": ".basemapToggler",
+            "intro": "${intro.basemap}",
+            "position": "bottom"
+          },
+          {
+            "element": ".omnisearch",
+            "intro": "${intro.omnisearch}",
+            "position": "right"
+          },
+          {
+            "element": ".ctWDYWBtn",
+            "intro": "${intro.functions}",
+            "position": "right"
+          },
+          {
+            "element": ".ctTool_basemapgalleryToggleTool",
+            "intro": "${intro.gallery}",
+            "position": "top"
+          },
+          {
+            "element": ".ctBasemapGallery",
+            "intro": "${intro.galleryTool}",
+            "position": "bottom",
+            "toolId": "basemapgalleryToggleTool"
+          },
+          {
+            "element": ".ctTool_followmeToggleTool",
+            "intro": "${intro.followme}",
+            "position": "top"
+          },
+          {
+            "element": ".ctTool_mapflowToggleTool",
+            "intro": "${intro.mapflow}",
+            "position": "top"
+          },
+          {
+            "element": ".ctMapFlow",
+            "intro": "${intro.mapflowTool}",
+            "position": "top",
+            "toolId": "mapflowToggleTool"
+          },
+          {
+            "element": ".ctTool_routingToggleTool",
+            "intro": "${intro.routing}",
+            "position": "top"
+          },
+          {
+            "element": ".ctTool_legendToggleTool",
+            "intro": "${intro.legend}",
+            "position": "top"
+          },
+          {
+            "element": ".themeSelector",
+            "intro": "${intro.theme}",
+            "position": "bottom"
+          },
+          {
+            "element": ".languageToggler",
+            "intro": "${intro.language}",
+            "position": "bottom"
+          },
+          {
+            "intro": "${intro.featureinfo}"
+          }
         ]
     }
 }
