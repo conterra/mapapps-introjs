@@ -6,6 +6,13 @@
   "Bundle-Vendor": "con terra GmbH",
   "Product-Name": "devnet-mapapps-introjs",
   "Bundle-StartLevel": 51,
+  "Bundle-ExcludedExecutionEnvironment": [
+    "mobile",
+    "Android",
+    "iPad",
+    "iPhone"
+  ],
+  "Bundle-DocURL": "https://github.com/conterra/mapapps-introjs/blob/master/README.md",
   "Config-Bundle-Location": "/config",
   "Require-Bundle": [
   ],
@@ -44,7 +51,7 @@
           "filter": "(id=introTool)"
         },
         {
-          "name":"_userIntro",
+          "name": "_userIntro",
           "providing": "dn_introjs.UserIntro"
         }
       ]
@@ -116,10 +123,6 @@
         {
           "name": "_eventService",
           "providing": "ct.framework.api.EventService"
-        },
-        {
-          "name": "_esriMap",
-          "providing": "esri.Map"
         },
         {
           "name": "_tools",
