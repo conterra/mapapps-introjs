@@ -119,7 +119,7 @@
           {
             "element": ".ctBasemapGallery",
             "intro": "${intro.galleryTool}",
-            "position": "bottom",
+            "position": "top",
             "toolId": "basemapgalleryToggleTool"
           },
           {

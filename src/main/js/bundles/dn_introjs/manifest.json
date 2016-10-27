@@ -5,7 +5,7 @@
   "Bundle-Description": "${bundleDescription}",
   "Bundle-Vendor": "con terra GmbH",
   "Product-Name": "devnet-mapapps-introjs",
-  "Bundle-StartLevel": 51,
+  //"Bundle-StartLevel": 51,
   "Bundle-ExcludedExecutionEnvironment": [
     "mobile",
     "Android",

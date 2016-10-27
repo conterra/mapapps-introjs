@@ -36,12 +36,7 @@ define([
         startIntro: function () {
             var intro = this._intro = introjs();
             var properties = this._properties;
-            var steps = this._steps = [];
-            d_array.forEach(properties.steps, function (step) {
-                steps.push(step);
-                /*if (step.element && typeof step.element !== "object")
-                 step.element = document.querySelector(step.element);*/
-            });
+            this._steps = properties.steps;
             intro.setOptions({
                 showStepNumbers: properties.showStepNumbers,
                 showBullets: properties.showBullets,
@@ -58,6 +53,7 @@ define([
                 steps: properties.steps
             });
             intro.onbeforechange(d_lang.hitch(this, this.beforeStep));
+            intro.onchange(d_lang.hitch(this, this.onStep));
             intro.onafterchange(d_lang.hitch(this, this.afterStep));
             intro.start();
         },
@@ -69,17 +65,21 @@ define([
             var intro = this._intro;
             var currentStep = intro._currentStep;
             var step = intro._introItems[currentStep];
+            var stepElement = this._steps[currentStep].element;
             if (step.toolId) {
                 var tool = this._activeTool = this.getTool(step.toolId);
                 tool.set("active", true);
             }
-            var stepElement = this._steps[currentStep];
-            if (stepElement.element && typeof stepElement.element !== "object")
-                step.element = document.querySelector(stepElement.element);
-
-
+            if (stepElement)
+                step.element = document.querySelector(stepElement);
+        },
+        onStep: function () {
         },
         afterStep: function () {
+            var intro = this._intro;
+            //setTimeout(function () {
+                intro.refresh();
+            //}, 3000);
         },
         getTool: function (toolId) {
             var tools = this._tools;
