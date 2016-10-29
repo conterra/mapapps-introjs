@@ -29,13 +29,20 @@ define([
         overlayUtils: null,
         overlayCount: 0,
         activate: function () {
-            ct_async(function () {
-                //this.startIntro();
-            }, this, 1000);
         },
         startIntro: function () {
             var intro = this._intro = introjs();
             var properties = this._properties;
+            var appCtx = this._appCtx;
+            /*appCtx._applicationRootNode.addClassName("dn_introjs");
+            d_array.forEach(properties.steps, function (step) {
+                if (step.toolId) {
+                    var tool = this.getTool(step.toolId);
+                    tool.set("active", true);
+                    tool.set("active", false);
+                }
+            }, this);
+            appCtx._applicationRootNode.removeClassName("dn_introjs");*/
             this._steps = properties.steps;
             intro.setOptions({
                 showStepNumbers: properties.showStepNumbers,
@@ -70,16 +77,19 @@ define([
                 var tool = this._activeTool = this.getTool(step.toolId);
                 tool.set("active", true);
             }
-            if (stepElement)
+            if (stepElement) {
                 step.element = document.querySelector(stepElement);
+                if (!step.element)
+                    intro.nextStep();
+            }
         },
         onStep: function () {
         },
         afterStep: function () {
             var intro = this._intro;
-            //setTimeout(function () {
+            ct_async(function () {
                 intro.refresh();
-            //}, 3000);
+            }, this, 1000);
         },
         getTool: function (toolId) {
             var tools = this._tools;

@@ -125,6 +125,10 @@
           "providing": "ct.framework.api.EventService"
         },
         {
+          "name": "_appCtx",
+          "providing": "ct.framework.api.ApplicationContext"
+        },
+        {
           "name": "_tools",
           "providing": "ct.tools.Tool",
           "cardinality": "0..n"
