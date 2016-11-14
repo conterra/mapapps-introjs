@@ -17,3 +17,9 @@
     display: table;
     margin: 0 auto;
 }
+
+.dn_introjs_initializing .ctWindow,
+.dn_introjs_initializing .ctWindow * {
+    opacity: 0;
+    visibility: hidden;
+}

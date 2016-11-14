@@ -29,12 +29,13 @@ define([
         overlayUtils: null,
         overlayCount: 0,
         activate: function () {
+            this.inherited(arguments);
         },
         startIntro: function () {
             var intro = this._intro = introjs();
             var properties = this._properties;
             var appCtx = this._appCtx;
-            /*appCtx._applicationRootNode.addClassName("dn_introjs");
+            appCtx._applicationRootNode.addClassName("dn_introjs_initializing");
             d_array.forEach(properties.steps, function (step) {
                 if (step.toolId) {
                     var tool = this.getTool(step.toolId);
@@ -42,7 +43,9 @@ define([
                     tool.set("active", false);
                 }
             }, this);
-            appCtx._applicationRootNode.removeClassName("dn_introjs");*/
+            ct_async(function () {
+                appCtx._applicationRootNode.removeClassName("dn_introjs_initializing");
+            }, this, 1000);
             this._steps = properties.steps;
             intro.setOptions({
                 showStepNumbers: properties.showStepNumbers,
