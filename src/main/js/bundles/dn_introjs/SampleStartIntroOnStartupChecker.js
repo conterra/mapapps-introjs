@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 define([
-    ".",
-    "./IntroStarter",
-    "./IntroWidget",
-    "./IntroWidgetFactory",
-    "./UserIntro",
-    "./SampleStartIntroOnStartupChecker"
-], {});
+    "dojo/_base/declare"
+], function (declare) {
+    return declare([], {
+        getStartIntroOnStartupValue: function () {
+            return true;
+        }
+    });
+});

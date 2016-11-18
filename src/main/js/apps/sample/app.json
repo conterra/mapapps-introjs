@@ -75,6 +75,7 @@
   "bundles": {
     "dn_introjs": {
       "UserIntro": {
+        "enableCookie": true,
         "startIntroOnStartup": true,
         "showStepNumbers": false,
         "showBullets": false,

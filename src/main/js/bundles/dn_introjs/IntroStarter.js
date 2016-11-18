@@ -22,14 +22,23 @@ define([
         activate: function () {
             this.inherited(arguments);
             var userIntro = this._userIntro;
-            var startIntroOnStartup = userIntro._properties.startIntroOnStartup;
+            var properties = userIntro._properties;
+            var startIntroOnStartup = properties.startIntroOnStartup;
+            var enableCookie = properties.enableCookie;
             if (startIntroOnStartup) {
-                var cookieKey = "ShowIntroduction";
-                var value = d_cookie(cookieKey);
-                if (value === "false") {
-                    // do nothing
+                if (enableCookie) {
+                    var cookieKey = "ShowIntroduction";
+                    var value = d_cookie(cookieKey);
+                    if (value === "false") {
+                        // do nothing
+                    } else {
+                        this._tool.set("active", true);
+                    }
                 } else {
-                    this._tool.set("active", true);
+                    var startIntro = this._startIntroOnStartupChecker && this._startIntroOnStartupChecker.getStartIntroOnStartupValue();
+                    if (startIntro) {
+                        this._tool.set("active", true);
+                    }
                 }
             }
         }

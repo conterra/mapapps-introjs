@@ -53,6 +53,11 @@
         {
           "name": "_userIntro",
           "providing": "dn_introjs.UserIntro"
+        },
+        {
+          "name": "_startIntroOnStartupChecker",
+          "providing": "dn_introjs.StartIntroOnStartupChecker",
+          "cardinality": "0..1"
         }
       ]
     },
@@ -117,7 +122,8 @@
         "prevLabel": "${intro.back}",
         "skipLabel": "${intro.skip}",
         "doneLabel": "${intro.done}",
-        "steps": []
+        "steps": [],
+        "enableCookie": true
       },
       "references": [
         {
@@ -133,6 +139,12 @@
           "providing": "ct.tools.Tool",
           "cardinality": "0..n"
         }
+      ]
+    },
+    {
+      "name": "SampleStartIntroOnStartupChecker",
+      "provides": "dn_introjs.StartIntroOnStartupChecker",
+      "references": [
       ]
     }
   ]

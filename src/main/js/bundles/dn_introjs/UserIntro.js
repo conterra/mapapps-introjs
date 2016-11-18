@@ -92,7 +92,7 @@ define([
             var intro = this._intro;
             ct_async(function () {
                 intro.refresh();
-            }, this, 1000);
+            }, this, 500);
         },
         getTool: function (toolId) {
             var tools = this._tools;
