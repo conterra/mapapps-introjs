@@ -35,7 +35,11 @@ define([
             var intro = this._intro = introjs();
             var properties = this._properties;
             var appCtx = this._appCtx;
-            appCtx._applicationRootNode.addClassName("dn_introjs_initializing");
+            if (appCtx._applicationRootNode.addClassName !== undefined) {
+                appCtx._applicationRootNode.addClassName("dn_introjs_initializing");
+            } else {
+                appCtx._applicationRootNode.className = appCtx._applicationRootNode.className + " dn_introjs_initializing";
+            }
             d_array.forEach(properties.steps, function (step) {
                 if (step.toolId) {
                     var tool = this.getTool(step.toolId);
@@ -44,7 +48,11 @@ define([
                 }
             }, this);
             ct_async(function () {
-                appCtx._applicationRootNode.removeClassName("dn_introjs_initializing");
+                if (appCtx._applicationRootNode.removeClassName !== undefined) {
+                    appCtx._applicationRootNode.removeClassName("dn_introjs_initializing");
+                } else {
+                    appCtx._applicationRootNode.className = appCtx._applicationRootNode.className.replace("dn_introjs_initializing", "");
+                }
             }, this, 1000);
             this._steps = properties.steps;
             intro.setOptions({
