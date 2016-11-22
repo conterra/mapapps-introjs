@@ -1,7 +1,7 @@
 {
   "properties": {
     "title": "${apptitle}",
-    "amdPackages": "apprt@^3.6.0"
+    "amdPackages": "apprt@^3.3.0"
   },
   "load": {
     "bundleLocations": [
@@ -9,8 +9,8 @@
       "bundles"
     ],
     "allowedBundles": [
-      "console@^3.6.0",
-      "custominfo@^3.6.0",
+      "console@^3.3.0",
+      "custominfo@^3.3.0",
       "filesaver@^3.6.0",
       "languagetoggler@^3.6.0",
       "mobileview@^3.6.0",
