@@ -6,10 +6,12 @@
   "Bundle-Vendor": "con terra GmbH",
   "Require-Bundle": [
     {
-      "name": "dataform"
+      "name": "dataform",
+      "version": "^3.6.0"
     },
     {
-      "name": "wizard"
+      "name": "wizard",
+      "version": "^3.6.0"
     }
   ],
   "Components": [
