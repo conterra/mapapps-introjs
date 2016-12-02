@@ -52,7 +52,7 @@ define([
             widget.resize();
         },
         start: function () {
-            this._userIntro.startIntro();
+            this._userIntro.initializeIntro();
             if (this.widget._checkBox.get("value") === "agreed")
                 this.disableIntro();
             this._tool.set("active", false);

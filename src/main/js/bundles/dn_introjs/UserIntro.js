@@ -17,6 +17,7 @@ define([
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dojo/_base/array",
+    "dojo/_base/Deferred",
     "dojo/dom-construct",
     "dojo/query",
     "dojo/_base/window",
@@ -24,36 +25,17 @@ define([
     "ct/_Connect",
     "ct/async",
     "ct/array"
-], function (declare, d_lang, d_array, domConstruct, query, win, introjs, _Connect, ct_async, ct_array) {
+], function (declare, d_lang, d_array, Deferred, domConstruct, query, win, introjs, _Connect, ct_async, ct_array) {
     return declare([_Connect], {
         overlayUtils: null,
         overlayCount: 0,
         activate: function () {
             this.inherited(arguments);
         },
-        startIntro: function () {
+        initializeIntro: function () {
             var intro = this._intro = introjs();
             var properties = this._properties;
-            var appCtx = this._appCtx;
-            if (appCtx._applicationRootNode.addClassName !== undefined) {
-                appCtx._applicationRootNode.addClassName("dn_introjs_initializing");
-            } else {
-                appCtx._applicationRootNode.className = appCtx._applicationRootNode.className + " dn_introjs_initializing";
-            }
-            d_array.forEach(properties.steps, function (step) {
-                if (step.toolId) {
-                    var tool = this.getTool(step.toolId);
-                    tool.set("active", true);
-                    tool.set("active", false);
-                }
-            }, this);
-            ct_async(function () {
-                if (appCtx._applicationRootNode.removeClassName !== undefined) {
-                    appCtx._applicationRootNode.removeClassName("dn_introjs_initializing");
-                } else {
-                    appCtx._applicationRootNode.className = appCtx._applicationRootNode.className.replace("dn_introjs_initializing", "");
-                }
-            }, this, 1000);
+            this.addStartCssClass();
             this._steps = properties.steps;
             intro.setOptions({
                 showStepNumbers: properties.showStepNumbers,
@@ -73,7 +55,52 @@ define([
             intro.onbeforechange(d_lang.hitch(this, this.beforeStep));
             intro.onchange(d_lang.hitch(this, this.onStep));
             intro.onafterchange(d_lang.hitch(this, this.afterStep));
-            intro.start();
+            this.startIntro(intro);
+        },
+        addStartCssClass: function () {
+            var appCtx = this._appCtx;
+            if (appCtx._applicationRootNode.addClassName !== undefined) {
+                appCtx._applicationRootNode.addClassName("dn_introjs_initializing");
+            } else {
+                appCtx._applicationRootNode.className = appCtx._applicationRootNode.className + " dn_introjs_initializing";
+            }
+        },
+        removeStartCssClass: function () {
+            var appCtx = this._appCtx;
+            if (appCtx._applicationRootNode.removeClassName !== undefined) {
+                appCtx._applicationRootNode.removeClassName("dn_introjs_initializing");
+            } else {
+                appCtx._applicationRootNode.className = appCtx._applicationRootNode.className.replace("dn_introjs_initializing", "");
+            }
+        },
+        startIntro: function (intro) {
+            var tools = [];
+            d_array.forEach(this._properties.steps, function (step) {
+                if (step.toolId) {
+                    var tool = this.getTool(step.toolId);
+                    tool.set("active", true);
+                    ct_async(function () {
+                        tool.set("active", false);
+                    }, this, 500);
+                    tools.push(tool);
+                }
+            }, this);
+            var n = tools.length;
+            if (n > 0) {
+                var lastTool = tools[n - 1];
+                var con = new _Connect();
+                var that = this;
+                con.connect(lastTool, "onDeactivate", function () {
+                    con.disconnect();
+                    intro.start();
+                    ct_async(function () {
+                        that.removeStartCssClass();
+                    }, this, 500);
+                });
+            } else {
+                this.removeStartCssClass();
+                intro.start();
+            }
         },
         beforeStep: function () {
             var activeTool = this._activeTool;
@@ -88,19 +115,17 @@ define([
                 var tool = this._activeTool = this.getTool(step.toolId);
                 tool.set("active", true);
             }
-            if (stepElement) {
-                step.element = document.querySelector(stepElement);
-                if (!step.element)
-                    intro.nextStep();
-            }
+            /*if (stepElement) {
+             step.element = document.querySelector(stepElement);
+             if (!step.element)
+             intro.nextStep();
+             }*/
         },
         onStep: function () {
         },
         afterStep: function () {
-            var intro = this._intro;
-            ct_async(function () {
-                intro.refresh();
-            }, this, 500);
+            //var intro = this._intro;
+            //intro.refresh();
         },
         getTool: function (toolId) {
             var tools = this._tools;
