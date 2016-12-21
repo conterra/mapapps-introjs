@@ -1,6 +1,6 @@
 {
   "Bundle-SymbolicName": "dn_introjs",
-  "Bundle-Version": "1.0.4-SNAPSHOT",
+  "Bundle-Version": "1.0.4",
   "Bundle-Name": "${bundleName}",
   "Bundle-Description": "${bundleDescription}",
   "Bundle-Vendor": "con terra GmbH",
@@ -109,6 +109,7 @@
         "dn_introjs.UserIntro"
       ],
       "properties": {
+        "enableCookie": true,
         "startIntroOnStartup": true,
         "showStepNumbers": false,
         "showBullets": true,
@@ -122,8 +123,7 @@
         "prevLabel": "${intro.back}",
         "skipLabel": "${intro.skip}",
         "doneLabel": "${intro.done}",
-        "steps": [],
-        "enableCookie": true
+        "steps": []
       },
       "references": [
         {
