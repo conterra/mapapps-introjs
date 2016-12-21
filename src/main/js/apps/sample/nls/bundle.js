@@ -145,6 +145,7 @@ define({
             theme: "Change the map.apps theme.",
             language: "Choose another language.",
             functions: "Additional functionality is available here.",
+            navigation: "Additional navigation functionalities are available here.",
             mapflow: "This button opens the mapflow. It allows you to change the map content.",
             mapflowTool: "Simply select any map content.",
             legend: "The legend shows the layer symbology.",

@@ -114,6 +114,12 @@
             "position": "right"
           },
           {
+            "element": ".navigation_tools",
+            "intro": "${intro.navigation}",
+            "position": "right",
+            "toolId": "navigation_tools"
+          },
+          {
             "element": ".ctTool_basemapgalleryToggleTool",
             "intro": "${intro.gallery}",
             "position": "top"

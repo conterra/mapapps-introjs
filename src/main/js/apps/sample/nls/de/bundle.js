@@ -144,6 +144,7 @@ define({
         theme: "Hier k\u00f6nnen Sie das aktuelle Farbschema wechseln.",
         language: "Eine andere Sprache k\u00f6nnen Sie hier ausw\u00e4hlen.",
         functions: "Hier finden Sie weitere Funktionen.",
+        navigation: "Hier finden Sie weitere M\u00f6glichkeiten der Kartennavigation.",
         mapflow: "W\u00e4hlen Sie hier Ihre Kartenthemen.",
         mapflowTool: "Aktivieren Sie dazu einfach das gewünschte Kartenthema.",
         legend: "Die Legende zeigt Ihnen die Symbolisierung der dargestellten Karteninhalte.",
