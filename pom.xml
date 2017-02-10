@@ -485,12 +485,12 @@
         <repository>
             <id>ct-dist-releases-file</id>
             <name>repository for sdi.suite releases</name>
-            <url>file://///repository01.esri-de.com/maven/maven-repo/releases</url>
+            <url>${release.deployment.url}</url>
         </repository>
         <snapshotRepository>
             <id>ct-dist-snapshots-file</id>
             <name>repository for sdi.suite snapshots</name>
-            <url>file://///repository01.esri-de.com/maven/maven-repo/snapshots</url>
+            <url>${snapshot.deployment.url}</url>
         </snapshotRepository>
     </distributionManagement>
     <properties>
