@@ -169,7 +169,16 @@
                             <version>2.4.0.1-v8</version>
                         </dependency>
                     </dependencies>
-                </plugin>                
+                </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>de.jutzig</groupId>
+                    <artifactId>github-release-plugin</artifactId>
+                    <version>1.1.1</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <!-- set as source dir, so that you can edit it correctly in netbeans -->
@@ -463,12 +472,7 @@
                     <username>${scm.username}</username>
                     <password>${scm.password}</password>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>de.jutzig</groupId>
-                <artifactId>github-release-plugin</artifactId>
-                <version>1.1.1</version>
-            </plugin>
+            </plugin>           
         </plugins>
     </build>
     <scm>
