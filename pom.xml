@@ -629,8 +629,7 @@
             <id>commit-release-versions</id>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
+                    <plugin>                       
                         <artifactId>maven-scm-plugin</artifactId>
                         <executions>
                             <execution>
