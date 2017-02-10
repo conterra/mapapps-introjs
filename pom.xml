@@ -510,6 +510,11 @@
             http;
         </proxy.allowedServerUrls>
         <proxy.allowedSSLDNs>*</proxy.allowedSSLDNs>
+        
+         <!-- required for release build -->
+        <scm.push>false</scm.push>
+        <scm.username>${env.USER_NAME}</scm.username>
+        <scm.password>${env.USER_PW}</scm.password>
     </properties>
     <profiles>
         <profile>
