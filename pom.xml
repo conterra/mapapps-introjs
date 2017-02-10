@@ -169,11 +169,7 @@
                             <version>2.4.0.1-v8</version>
                         </dependency>
                     </dependencies>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.10</version>
-                </plugin>
+                </plugin>                
             </plugins>
         </pluginManagement>
         <!-- set as source dir, so that you can edit it correctly in netbeans -->
@@ -634,6 +630,7 @@
             <build>
                 <plugins>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-scm-plugin</artifactId>
                         <executions>
                             <execution>
