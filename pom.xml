@@ -460,7 +460,7 @@
                 <configuration>
                     <tagNameFormat>@{project.version}</tagNameFormat>
                     <preparationGoals>clean</preparationGoals>
-                    <releaseProfiles>compress,github-release,write-release-versions,commit-release-versions,rollout</releaseProfiles>
+                    <releaseProfiles>compress,github-release</releaseProfiles>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <!-- for git release plugin-->
                     <arguments>-Dusername=${scm.username} -Dpassword=${scm.password}</arguments>
@@ -639,12 +639,14 @@
                             <execution>
                                 <phase>validate</phase>
                                 <goals>
-                                    <goal>checkin</goal>
-                                    <goal>update</goal>
+                                    <goal>checkin</goal>               
                                 </goals>
                                 <configuration>
                                     <message>[update-bundle-package-versions] from ${replace.source.version} to ${replace.target.version}</message>
                                     <basedir>${basedir}/src/main/js</basedir>
+                                    <pushChanges>${scm.push}</pushChanges>
+                                    <username>${scm.username}</username>
+                                    <password>${scm.password}</password>
                                 </configuration>
                             </execution>
                         </executions>
