@@ -416,7 +416,7 @@
                     <descriptors>
                         <descriptor>src/main/config/assembly.xml</descriptor>
                     </descriptors>
-                    <finalName>${artifactId}-bundle</finalName>
+                    <finalName>${project.artifactId}-bundle</finalName>
                     <appendAssemblyId>false</appendAssemblyId>                   
                 </configuration>
                 <executions> 
