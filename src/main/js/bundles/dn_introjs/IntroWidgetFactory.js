@@ -48,13 +48,23 @@ define([
                 i18n: i18n,
                 startIntroOnStartup: startIntroOnStartup
             });
+            if (this.isEnabled() === "false") {
+                widget._checkBox.set("value", true);
+            } else {
+                widget._checkBox.set("value", false);
+            }
             this.connect(widget, "onStart", this.start);
+            this.connect(widget._checkBox, "onChange", function (activated) {
+                if (activated) {
+                    this.disableIntro();
+                } else {
+                    this.enableIntro();
+                }
+            });
             widget.resize();
         },
         start: function () {
             this._userIntro.startIntro();
-            if (this.widget._checkBox.get("value") === "agreed")
-                this.disableIntro();
             this._tool.set("active", false);
         },
         disableIntro: function () {
@@ -64,6 +74,10 @@ define([
         enableIntro: function () {
             var cookieKey = "ShowIntroduction";
             d_cookie(cookieKey, true);
+        },
+        isEnabled: function () {
+            var cookieKey = "ShowIntroduction";
+            return d_cookie(cookieKey);
         }
     });
 });
