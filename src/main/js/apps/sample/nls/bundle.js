@@ -152,7 +152,7 @@ define({
             featureinfo: "Click on the map to query additional information.",
             followme: "Here you are able to work toghether with other user.",
             gallery: "Choose another basemap in the gallery.",
-            galleryTool: "Simply lick on any basemap",
+            galleryTool: "Simply click on any basemap",
             routing: "Here you can calculate a route.",
             okButton: "Ok",
             closeButton: "Close",

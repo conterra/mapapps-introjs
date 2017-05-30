@@ -20,5 +20,9 @@ define({
     toolName: "Intro Tool",
     toolTooltip: "Intro Tool",
     start: "Einf\u00fchrung starten",
-    hint: "Beim n\u00e4chsten Start nicht mehr anzeigen"
+    hint: "Beim n\u00e4chsten Start nicht mehr anzeigen",
+    next: "Weiter",
+    back: "Zur\u00fcck",
+    skip: "\u00dcberspringen",
+    done: "Beenden"
 });
