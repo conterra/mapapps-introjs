@@ -44,7 +44,9 @@ define([
                 if (step.toolId) {
                     var tool = this.getTool(step.toolId);
                     tool.set("active", true);
-                    tool.set("active", false);
+                    ct_async(function () {
+                        tool.set("active", false);
+                    }, this, 500);
                 }
             }, this);
             ct_async(function () {
