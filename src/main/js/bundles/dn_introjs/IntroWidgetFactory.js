@@ -69,11 +69,11 @@ define([
         },
         disableIntro: function () {
             var cookieKey = "ShowIntroduction";
-            d_cookie(cookieKey, false);
+            d_cookie(cookieKey, false, {expires: 365});
         },
         enableIntro: function () {
             var cookieKey = "ShowIntroduction";
-            d_cookie(cookieKey, true);
+            d_cookie(cookieKey, null, {expires: -1});
         },
         isEnabled: function () {
             var cookieKey = "ShowIntroduction";
