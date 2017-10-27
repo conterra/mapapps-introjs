@@ -1,12 +1,11 @@
 # mapapps-introjs
+
+❗️ This bundle is no longer maintained. You may use https://github.com/conterra/mapapps-intro instead, which extends functionality of this bundle. ❗️
+
 This bundle allows you to create your own step-by-step guide in map.apps based on the introjs framework.
 https://github.com/usablica/intro.js/
 
 :heavy_exclamation_mark: desktop-only
-
-Sample App
-------------------
-http://www.mapapps.de/mapapps/resources/apps/downloads_introjs/index.html
 
 Installation Guide
 ------------------
